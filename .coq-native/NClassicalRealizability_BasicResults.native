@@ -1,0 +1,96 @@
+open Nativevalues
+open Nativecode
+open Nativelib
+open Nativeconv
+open Declaremods
+let symbols_tbl =
+  get_library_symbols_tbl
+  (str_decode "8495a6be0000002700000004000000120000000da02c4261736963526573756c7473a036436c6173736963616c5265616c697a6162696c69747940")
+
+(* Time spent generating this code: 0.00000s *)
+let const_NClassicalRealizability_BasicResults_Fvalue_Bot =
+  mk_constant_accu (get_const symbols_tbl 0)
+
+let const_NClassicalRealizability_BasicResults_Tvalue_Top =
+  mk_constant_accu (get_const symbols_tbl 1)
+
+let const_NClassicalRealizability_BasicResults_Id_realizer_by_hand =
+  mk_constant_accu (get_const symbols_tbl 2)
+
+let const_NClassicalRealizability_BasicResults_Id_realizer_intermediate =
+  mk_constant_accu (get_const symbols_tbl 3)
+
+let const_NClassicalRealizability_BasicResults_Id_realizer =
+  mk_constant_accu (get_const symbols_tbl 4)
+
+let const_NClassicalRealizability_BasicResults_modus_ponens =
+  mk_constant_accu (get_const symbols_tbl 5)
+
+let const_NClassicalRealizability_BasicResults_Impl_eta_realizer =
+  mk_constant_accu (get_const symbols_tbl 6)
+
+let const_NClassicalRealizability_BasicResults_uniform_Forall =
+  mk_constant_accu (get_const symbols_tbl 7)
+
+let const_NClassicalRealizability_BasicResults_k_realizer =
+  mk_constant_accu (get_const symbols_tbl 8)
+
+let const_NClassicalRealizability_BasicResults_ex_falso =
+  mk_constant_accu (get_const symbols_tbl 9)
+
+let const_NClassicalRealizability_BasicResults_callcc_realizes_Peirce =
+  mk_constant_accu (get_const symbols_tbl 10)
+
+let const_NClassicalRealizability_BasicResults_excluded_middle =
+  mk_constant_accu (get_const symbols_tbl 11)
+
+let const_NClassicalRealizability_BasicResults_mapsto_equiv =
+  mk_constant_accu (get_const symbols_tbl 12)
+
+let const_NClassicalRealizability_BasicResults_Y_realizer =
+  mk_constant_accu (get_const symbols_tbl 13)
+
+let const_NClassicalRealizability_BasicResults_Y_rel =
+  lazy
+  ((Obj.magic (NClassicalRealizability_ShallowEmbedding.Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+   get_value symbols_tbl 14),((Obj.magic (NClassicalRealizability_ShallowEmbedding.Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                              Lazy.force
+                              NClassicalRealizability_ShallowEmbedding.const_NClassicalRealizability_ShallowEmbedding_Y),(
+                              get_value symbols_tbl 15))) : Nativevalues.t)))) : Nativevalues.t))
+
+let const_NClassicalRealizability_BasicResults_Y_rel_realizer =
+  mk_constant_accu (get_const symbols_tbl 16)
+
+let const_NClassicalRealizability_BasicResults_redeq (x_p_0 : Nativevalues.t) (x_p'_1 : Nativevalues.t) =
+  NCoq_Init_Logic.indaccu_NCoq_Init_Logic_or_0
+  (NCoq_Init_Logic.indaccu_NCoq_Init_Logic_eq_0
+   NClassicalRealizability_ShallowEmbedding.indaccu_NClassicalRealizability_ShallowEmbedding_process_0 
+   x_p_0 x_p'_1) (NClassicalRealizability_ShallowEmbedding.const_NClassicalRealizability_ShallowEmbedding_red
+                  x_p_0 x_p'_1)
+
+let const_NClassicalRealizability_BasicResults_dot (x___U03c0__2 : Nativevalues.t) (x___U03c0_'_3 : Nativevalues.t) =
+  NCoq_Init_Logic.indaccu_NCoq_Init_Logic_eq_0
+  NClassicalRealizability_ShallowEmbedding.indaccu_NClassicalRealizability_ShallowEmbedding___U039b__1 
+  x___U03c0_'_3 x___U03c0__2
+
+let const_NClassicalRealizability_BasicResults_non_confusion =
+  mk_constant_accu (get_const symbols_tbl 17)
+
+let const_NClassicalRealizability_BasicResults_non_confusion2 =
+  mk_constant_accu (get_const symbols_tbl 18)
+
+let const_NClassicalRealizability_BasicResults_redeq_red =
+  mk_constant_accu (get_const symbols_tbl 19)
+
+let const_NClassicalRealizability_BasicResults_specification_1_easy =
+  mk_constant_accu (get_const symbols_tbl 20)
+
+let const_NClassicalRealizability_BasicResults_specification_1 =
+  mk_constant_accu (get_const symbols_tbl 21)
+
+let const_NClassicalRealizability_BasicResults_specification_bot_impl_bot_easy =
+  mk_constant_accu (get_const symbols_tbl 22)
+
+let const_NClassicalRealizability_BasicResults_specification_bot_impl_bot_with_eq =
+  mk_constant_accu (get_const symbols_tbl 23)
+

@@ -1,0 +1,1669 @@
+open Nativevalues
+open Nativecode
+open Nativelib
+open Nativeconv
+open Declaremods
+let symbols_tbl =
+  get_library_symbols_tbl
+  (str_decode "8495a6be0000002b00000004000000130000000ea0305368616c6c6f77456d62656464696e67a036436c6173736963616c5265616c697a6162696c69747940")
+
+(* Time spent generating this code: 0.00400s *)
+let const_NClassicalRealizability_ShallowEmbedding_instruction =
+  mk_constant_accu (get_const symbols_tbl 0)
+
+let const_NClassicalRealizability_ShallowEmbedding_callcc =
+  mk_constant_accu (get_const symbols_tbl 1)
+
+let const_NClassicalRealizability_ShallowEmbedding_stack_const =
+  mk_constant_accu (get_const symbols_tbl 2)
+
+let indaccu_NClassicalRealizability_ShallowEmbedding_term_0 =
+  mk_ind_accu (get_ind symbols_tbl 3)
+
+type ind_NClassicalRealizability_ShallowEmbedding_term_0 =
+  | Accu_NClassicalRealizability_ShallowEmbedding_term_0 of Nativevalues.t
+  | Construct_NClassicalRealizability_ShallowEmbedding_term_0_0 of Nativevalues.t
+  | Construct_NClassicalRealizability_ShallowEmbedding_term_0_1 of Nativevalues.t * Nativevalues.t
+  | Construct_NClassicalRealizability_ShallowEmbedding_term_0_2 of Nativevalues.t
+  | Construct_NClassicalRealizability_ShallowEmbedding_term_0_3 of Nativevalues.t * Nativevalues.t
+
+
+let construct_NClassicalRealizability_ShallowEmbedding_term_0_0 (x_arg_0 : Nativevalues.t) =
+  (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_0 
+  x_arg_0) : Nativevalues.t)
+
+let construct_NClassicalRealizability_ShallowEmbedding_term_0_1 (x_arg_0 : Nativevalues.t) (x_arg_1 : Nativevalues.t) =
+  (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1(
+  x_arg_0,x_arg_1)) : Nativevalues.t)
+
+let construct_NClassicalRealizability_ShallowEmbedding_term_0_2 (x_arg_0 : Nativevalues.t) =
+  (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_2 
+  x_arg_0) : Nativevalues.t)
+
+let construct_NClassicalRealizability_ShallowEmbedding_term_0_3 (x_arg_0 : Nativevalues.t) (x_arg_1 : Nativevalues.t) =
+  (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3(
+  x_arg_0,x_arg_1)) : Nativevalues.t)
+
+let fixtype_term_rect_0  (x_P_6 : Nativevalues.t) =
+  [|mk_prod_accu
+    (get_name symbols_tbl 4) indaccu_NClassicalRealizability_ShallowEmbedding_term_0 (
+    (fun (x_t_5 : Nativevalues.t) ->
+     x_P_6 x_t_5))|]
+
+let pred_term_rect_0 (x_P_10 : Nativevalues.t) (x_t_9 : Nativevalues.t) =
+  x_P_10 x_t_9
+
+(* Hash = -4272584692401826493 *)
+let rec case_term_rect_0  (x_P_23 : Nativevalues.t) (x_f_22 : Nativevalues.t) (x_f_19 : Nativevalues.t) (x_f_17 : Nativevalues.t) (x_F_16 : Nativevalues.t) (x_f_13 : Nativevalues.t) (x_anonymous_11 : Nativevalues.t) =
+  begin match Obj.magic (x_anonymous_11) with
+  | Accu_NClassicalRealizability_ShallowEmbedding_term_0 _ ->
+    mk_sw_accu
+    (get_match symbols_tbl 5) (cast_accu x_anonymous_11) (pred_term_rect_0
+                                                          x_P_23) (case_term_rect_0
+                                                                   x_P_23 
+                                                                   x_f_22 
+                                                                   x_f_19 
+                                                                   x_f_17 
+                                                                   x_F_16 
+                                                                   x_f_13)
+  | Construct_NClassicalRealizability_ShallowEmbedding_term_0_0 x_i_12  ->
+    x_f_13 x_i_12
+  | Construct_NClassicalRealizability_ShallowEmbedding_term_0_1(x_s_14,
+  x_t_15)  ->
+    x_f_17 x_s_14 x_t_15 (x_F_16 x_t_15)
+  | Construct_NClassicalRealizability_ShallowEmbedding_term_0_2 x_s_18  ->
+    x_f_19 x_s_18
+  | Construct_NClassicalRealizability_ShallowEmbedding_term_0_3(x_t_20,
+  x_t_21)  ->
+    x_f_22 x_t_20 (x_F_16 x_t_20) x_t_21 (x_F_16 x_t_21)
+  end
+
+let norm_term_rect_0 (x_f_28 : Nativevalues.t) (x_f_27 : Nativevalues.t) (x_f_26 : Nativevalues.t) (x_f_25 : Nativevalues.t) (x_P_24 : Nativevalues.t) (x_F_7 : Nativevalues.t) (x_t_8 : Nativevalues.t) =
+  case_term_rect_0 x_P_24 x_f_25 x_f_26 x_f_27 x_F_7 x_f_28 x_t_8
+
+let normtbl_term_rect_0  (x_f_28 : Nativevalues.t) (x_f_27 : Nativevalues.t) (x_f_26 : Nativevalues.t) (x_f_25 : Nativevalues.t) (x_P_24 : Nativevalues.t) =
+  [|norm_term_rect_0 x_f_28 x_f_27 x_f_26 x_f_25 x_P_24|]
+
+let const_NClassicalRealizability_ShallowEmbedding_term_rect (x_P_0 : Nativevalues.t) (x_f_1 : Nativevalues.t) (x_f_2 : Nativevalues.t) (x_f_3 : Nativevalues.t) (x_f_4 : Nativevalues.t) =
+  let rec x_F_29 (x_t_8 : Nativevalues.t) =
+    (if is_accu x_t_8 then
+      mk_fix_accu [| 0 |] 0
+      (fixtype_term_rect_0 x_P_0) (normtbl_term_rect_0
+                                   x_f_1 x_f_2 x_f_3 x_f_4 x_P_0) x_t_8
+    else
+      begin match Obj.magic (x_t_8) with
+      | Accu_NClassicalRealizability_ShallowEmbedding_term_0 _ ->
+        mk_sw_accu
+        (get_match symbols_tbl 5) (cast_accu x_t_8) (pred_term_rect_0 x_P_0) (
+        case_term_rect_0 x_P_0 x_f_4 x_f_3 x_f_2 x_F_29 x_f_1)
+      | Construct_NClassicalRealizability_ShallowEmbedding_term_0_0 x_i_12  ->
+        x_f_1 x_i_12
+      | Construct_NClassicalRealizability_ShallowEmbedding_term_0_1(x_s_14,
+      x_t_15)  ->
+        x_f_2 x_s_14 x_t_15 (x_F_29 x_t_15)
+      | Construct_NClassicalRealizability_ShallowEmbedding_term_0_2 x_s_18  ->
+        x_f_3 x_s_18
+      | Construct_NClassicalRealizability_ShallowEmbedding_term_0_3(x_t_20,
+      x_t_21)  ->
+        x_f_4 x_t_20 (x_F_29 x_t_20) x_t_21 (x_F_29 x_t_21)
+      end)
+  in
+  x_F_29
+
+let const_NClassicalRealizability_ShallowEmbedding_term_ind (x_P_30 : Nativevalues.t) =
+  const_NClassicalRealizability_ShallowEmbedding_term_rect x_P_30
+
+let const_NClassicalRealizability_ShallowEmbedding_term_rec (x_P_31 : Nativevalues.t) =
+  const_NClassicalRealizability_ShallowEmbedding_term_rect x_P_31
+
+let indaccu_NClassicalRealizability_ShallowEmbedding___U039b__0 =
+  mk_ind_accu (get_ind symbols_tbl 6)
+
+type ind_NClassicalRealizability_ShallowEmbedding___U039b__0 =
+  | Accu_NClassicalRealizability_ShallowEmbedding___U039b__0 of Nativevalues.t
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__0_0 of Nativevalues.t * Nativevalues.t
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__0_1 of Nativevalues.t
+
+
+let construct_NClassicalRealizability_ShallowEmbedding___U039b__0_0 (x_arg_0 : Nativevalues.t) (x_arg_1 : Nativevalues.t) =
+  (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding___U039b__0_0(
+  x_arg_0,x_arg_1)) : Nativevalues.t)
+
+let construct_NClassicalRealizability_ShallowEmbedding___U039b__0_1 (x_arg_0 : Nativevalues.t) =
+  (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding___U039b__0_1 
+  x_arg_0) : Nativevalues.t)
+
+let indaccu_NClassicalRealizability_ShallowEmbedding___U039b__1 =
+  mk_ind_accu (get_ind symbols_tbl 7)
+
+type ind_NClassicalRealizability_ShallowEmbedding___U039b__1 =
+  | Accu_NClassicalRealizability_ShallowEmbedding___U039b__1 of Nativevalues.t
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__1_0 of Nativevalues.t
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__1_1 of Nativevalues.t * Nativevalues.t
+
+
+let construct_NClassicalRealizability_ShallowEmbedding___U039b__1_0 (x_arg_0 : Nativevalues.t) =
+  (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding___U039b__1_0 
+  x_arg_0) : Nativevalues.t)
+
+let construct_NClassicalRealizability_ShallowEmbedding___U039b__1_1 (x_arg_0 : Nativevalues.t) (x_arg_1 : Nativevalues.t) =
+  (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding___U039b__1_1(
+  x_arg_0,x_arg_1)) : Nativevalues.t)
+
+let indaccu_NClassicalRealizability_ShallowEmbedding___U039b__2 =
+  mk_ind_accu (get_ind symbols_tbl 8)
+
+type ind_NClassicalRealizability_ShallowEmbedding___U039b__2 =
+  | Accu_NClassicalRealizability_ShallowEmbedding___U039b__2 of Nativevalues.t
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__2_0 
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__2_1 of Nativevalues.t * Nativevalues.t * Nativevalues.t
+
+
+let construct_NClassicalRealizability_ShallowEmbedding___U039b__2_0 =
+  (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding___U039b__2_0) : Nativevalues.t)
+
+let construct_NClassicalRealizability_ShallowEmbedding___U039b__2_1 (x_arg_0 : Nativevalues.t) (x_arg_1 : Nativevalues.t) (x_arg_2 : Nativevalues.t) =
+  (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding___U039b__2_1(
+  x_arg_0,x_arg_1,x_arg_2)) : Nativevalues.t)
+
+(* Hash = -4340698127929945224 *)
+let rec case___U039b__rect_1  (x_P_44 : Nativevalues.t) (x_f_43 : Nativevalues.t) (x_f_41 : Nativevalues.t) (x_anonymous_38 : Nativevalues.t) =
+  begin match Obj.magic (x_anonymous_38) with
+  | Accu_NClassicalRealizability_ShallowEmbedding___U039b__0 _ ->
+    mk_sw_accu
+    (get_match symbols_tbl 9) (cast_accu x_anonymous_38) (pred_term_rect_0
+                                                          x_P_44) (case___U039b__rect_1
+                                                                   x_P_44 
+                                                                   x_f_43 
+                                                                   x_f_41)
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__0_0(x_anonymous_39,
+  x_anonymous_40)  ->
+    x_f_41 x_anonymous_39 x_anonymous_40
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__0_1 x_anonymous_42  ->
+    x_f_43 x_anonymous_42
+  end
+
+let const_NClassicalRealizability_ShallowEmbedding___U039b__rect (x_P_32 : Nativevalues.t) (x_f_33 : Nativevalues.t) (x_f_34 : Nativevalues.t) (x___U03bb__35 : Nativevalues.t) =
+  begin match Obj.magic (x___U03bb__35) with
+  | Accu_NClassicalRealizability_ShallowEmbedding___U039b__0 _ ->
+    mk_sw_accu
+    (get_match symbols_tbl 9) (cast_accu x___U03bb__35) (pred_term_rect_0
+                                                         x_P_32) (case___U039b__rect_1
+                                                                  x_P_32 
+                                                                  x_f_34 
+                                                                  x_f_33)
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__0_0(x_anonymous_39,
+  x_anonymous_40)  ->
+    x_f_33 x_anonymous_39 x_anonymous_40
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__0_1 x_anonymous_42  ->
+    x_f_34 x_anonymous_42
+  end
+
+let const_NClassicalRealizability_ShallowEmbedding___U039b__ind (x_P_45 : Nativevalues.t) =
+  const_NClassicalRealizability_ShallowEmbedding___U039b__rect x_P_45
+
+let const_NClassicalRealizability_ShallowEmbedding___U039b__rec (x_P_46 : Nativevalues.t) =
+  const_NClassicalRealizability_ShallowEmbedding___U039b__rect x_P_46
+
+let fixtype___U03a0__rect_1  (x_P_51 : Nativevalues.t) =
+  [|mk_prod_accu
+    (get_name symbols_tbl 10) indaccu_NClassicalRealizability_ShallowEmbedding___U039b__1 (
+    (fun (x___U03c0__50 : Nativevalues.t) ->
+     x_P_51 x___U03c0__50))|]
+
+(* Hash = -4336463492595836367 *)
+let rec case___U03a0__rect_2  (x_P_63 : Nativevalues.t) (x_f_62 : Nativevalues.t) (x_F_61 : Nativevalues.t) (x_f_58 : Nativevalues.t) (x_anonymous_56 : Nativevalues.t) =
+  begin match Obj.magic (x_anonymous_56) with
+  | Accu_NClassicalRealizability_ShallowEmbedding___U039b__1 _ ->
+    mk_sw_accu
+    (get_match symbols_tbl 11) (cast_accu x_anonymous_56) (pred_term_rect_0
+                                                           x_P_63) (case___U03a0__rect_2
+                                                                    x_P_63 
+                                                                    x_f_62 
+                                                                    x_F_61 
+                                                                    x_f_58)
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__1_0 x_s_57  ->
+    x_f_58 x_s_57
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__1_1(x___U03bb__59,
+  x___U03c0__60)  ->
+    x_f_62 x___U03bb__59 x___U03c0__60 (x_F_61 x___U03c0__60)
+  end
+
+let norm___U03a0__rect_1 (x_f_66 : Nativevalues.t) (x_f_65 : Nativevalues.t) (x_P_64 : Nativevalues.t) (x_F_52 : Nativevalues.t) (x___U03c0__53 : Nativevalues.t) =
+  case___U03a0__rect_2 x_P_64 x_f_65 x_F_52 x_f_66 x___U03c0__53
+
+let normtbl___U03a0__rect_1  (x_f_66 : Nativevalues.t) (x_f_65 : Nativevalues.t) (x_P_64 : Nativevalues.t) =
+  [|norm___U03a0__rect_1 x_f_66 x_f_65 x_P_64|]
+
+let const_NClassicalRealizability_ShallowEmbedding___U03a0__rect (x_P_47 : Nativevalues.t) (x_f_48 : Nativevalues.t) (x_f_49 : Nativevalues.t) =
+  let rec x_F_67 (x___U03c0__53 : Nativevalues.t) =
+    (if is_accu x___U03c0__53 then
+      mk_fix_accu [| 0 |] 0
+      (fixtype___U03a0__rect_1 x_P_47) (normtbl___U03a0__rect_1
+                                        x_f_48 x_f_49 x_P_47) x___U03c0__53
+    else
+      begin match Obj.magic (x___U03c0__53) with
+      | Accu_NClassicalRealizability_ShallowEmbedding___U039b__1 _ ->
+        mk_sw_accu
+        (get_match symbols_tbl 11) (cast_accu x___U03c0__53) (pred_term_rect_0
+                                                              x_P_47) (
+        case___U03a0__rect_2 x_P_47 x_f_49 x_F_67 x_f_48)
+      | Construct_NClassicalRealizability_ShallowEmbedding___U039b__1_0 
+      x_s_57  ->
+        x_f_48 x_s_57
+      | Construct_NClassicalRealizability_ShallowEmbedding___U039b__1_1(
+      x___U03bb__59,x___U03c0__60)  ->
+        x_f_49 x___U03bb__59 x___U03c0__60 (x_F_67 x___U03c0__60)
+      end)
+  in
+  x_F_67
+
+let const_NClassicalRealizability_ShallowEmbedding___U03a0__ind (x_P_68 : Nativevalues.t) =
+  const_NClassicalRealizability_ShallowEmbedding___U03a0__rect x_P_68
+
+let const_NClassicalRealizability_ShallowEmbedding___U03a0__rec (x_P_69 : Nativevalues.t) =
+  const_NClassicalRealizability_ShallowEmbedding___U03a0__rect x_P_69
+
+let fixtype_env_rect_2  (x_P_74 : Nativevalues.t) =
+  [|mk_prod_accu
+    (get_name symbols_tbl 12) indaccu_NClassicalRealizability_ShallowEmbedding___U039b__2 (
+    (fun (x_e_73 : Nativevalues.t) ->
+     x_P_74 x_e_73))|]
+
+(* Hash = -4335616608564556316 *)
+let rec case_env_rect_3  (x_P_86 : Nativevalues.t) (x_f_85 : Nativevalues.t) (x_F_84 : Nativevalues.t) (x_f_80 : Nativevalues.t) (x_anonymous_79 : Nativevalues.t) =
+  begin match Obj.magic (x_anonymous_79) with
+  | Accu_NClassicalRealizability_ShallowEmbedding___U039b__2 _ ->
+    mk_sw_accu
+    (get_match symbols_tbl 13) (cast_accu x_anonymous_79) (pred_term_rect_0
+                                                           x_P_86) (case_env_rect_3
+                                                                    x_P_86 
+                                                                    x_f_85 
+                                                                    x_F_84 
+                                                                    x_f_80)
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__2_0  ->
+    x_f_80
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__2_1(x_s_81,
+  x___U03bb__82,x_e_83)  ->
+    x_f_85 x_s_81 x___U03bb__82 x_e_83 (x_F_84 x_e_83)
+  end
+
+let norm_env_rect_2 (x_f_89 : Nativevalues.t) (x_f_88 : Nativevalues.t) (x_P_87 : Nativevalues.t) (x_F_75 : Nativevalues.t) (x_e_76 : Nativevalues.t) =
+  case_env_rect_3 x_P_87 x_f_88 x_F_75 x_f_89 x_e_76
+
+let normtbl_env_rect_2  (x_f_89 : Nativevalues.t) (x_f_88 : Nativevalues.t) (x_P_87 : Nativevalues.t) =
+  [|norm_env_rect_2 x_f_89 x_f_88 x_P_87|]
+
+let const_NClassicalRealizability_ShallowEmbedding_env_rect (x_P_70 : Nativevalues.t) (x_f_71 : Nativevalues.t) (x_f_72 : Nativevalues.t) =
+  let rec x_F_90 (x_e_76 : Nativevalues.t) =
+    (if is_accu x_e_76 then
+      mk_fix_accu [| 0 |] 0
+      (fixtype_env_rect_2 x_P_70) (normtbl_env_rect_2 x_f_71 x_f_72 x_P_70) 
+      x_e_76
+    else
+      begin match Obj.magic (x_e_76) with
+      | Accu_NClassicalRealizability_ShallowEmbedding___U039b__2 _ ->
+        mk_sw_accu
+        (get_match symbols_tbl 13) (cast_accu x_e_76) (pred_term_rect_0
+                                                       x_P_70) (case_env_rect_3
+                                                                x_P_70 
+                                                                x_f_72 
+                                                                x_F_90 
+                                                                x_f_71)
+      | Construct_NClassicalRealizability_ShallowEmbedding___U039b__2_0  ->
+        x_f_71
+      | Construct_NClassicalRealizability_ShallowEmbedding___U039b__2_1(
+      x_s_81,x___U03bb__82,x_e_83)  ->
+        x_f_72 x_s_81 x___U03bb__82 x_e_83 (x_F_90 x_e_83)
+      end)
+  in
+  x_F_90
+
+let const_NClassicalRealizability_ShallowEmbedding_env_ind (x_P_91 : Nativevalues.t) =
+  const_NClassicalRealizability_ShallowEmbedding_env_rect x_P_91
+
+let const_NClassicalRealizability_ShallowEmbedding_env_rec (x_P_92 : Nativevalues.t) =
+  const_NClassicalRealizability_ShallowEmbedding_env_rect x_P_92
+
+let fixtype_get_3  =
+  [|mk_prod_accu
+    (get_name symbols_tbl 14) NCoq_Strings_String.indaccu_NCoq_Strings_String_string_0 (
+    (fun (x_s_93 : Nativevalues.t)
+    ->
+     mk_prod_accu
+     (get_name symbols_tbl 12) indaccu_NClassicalRealizability_ShallowEmbedding___U039b__2 (
+     (fun (x_e_94 : Nativevalues.t)
+     ->
+      indaccu_NClassicalRealizability_ShallowEmbedding___U039b__0))))|]
+
+let pred_get_4 (x_e_98 : Nativevalues.t) =
+  indaccu_NClassicalRealizability_ShallowEmbedding___U039b__0
+
+(* Hash = 2081326722677361920 *)
+let rec case_get_4  (x_get_110 : Nativevalues.t) (x_e'_109 : Nativevalues.t) (x_s_108 : Nativevalues.t) (x_t_106 : Nativevalues.t) (x_anonymous_104 : Nativevalues.t) =
+  begin match Obj.magic (x_anonymous_104) with
+  | NCoq_Init_Specif.Accu_NCoq_Init_Specif_sumbool_0 _ ->
+    mk_sw_accu
+    (get_match symbols_tbl 16) (cast_accu x_anonymous_104) (pred_get_4 ) (
+    case_get_4 x_get_110 x_e'_109 x_s_108 x_t_106)
+  | NCoq_Init_Specif.Construct_NCoq_Init_Specif_sumbool_0_0 _  ->
+    x_t_106
+  | NCoq_Init_Specif.Construct_NCoq_Init_Specif_sumbool_0_1 _  ->
+    x_get_110 x_s_108 x_e'_109
+  end
+
+(* Hash = -2837405771328596788 *)
+let rec case_get_5  (x_get_112 : Nativevalues.t) (x_s_111 : Nativevalues.t) (x_anonymous_99 : Nativevalues.t) =
+  begin match Obj.magic (x_anonymous_99) with
+  | Accu_NClassicalRealizability_ShallowEmbedding___U039b__2 _ ->
+    mk_sw_accu
+    (get_match symbols_tbl 13) (cast_accu x_anonymous_99) (pred_get_4 ) (
+    case_get_5 x_get_112 x_s_111)
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__2_0  ->
+    get_value symbols_tbl 15
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__2_1(x_c_100,
+  x_t_101,x_e'_102)  ->
+    case_get_4
+    x_get_112 x_e'_102 x_s_111 x_t_101 (NCoq_Strings_String.const_NCoq_Strings_String_string_dec
+                                        x_s_111 x_c_100)
+  end
+
+let norm_get_3 (x_get_95 : Nativevalues.t) (x_s_96 : Nativevalues.t) (x_e_97 : Nativevalues.t) =
+  case_get_5 x_get_95 x_s_96 x_e_97
+
+let normtbl_get_3  =
+  [|norm_get_3|]
+
+let const_NClassicalRealizability_ShallowEmbedding_get =
+  let rec x_get_113 (x_s_96 : Nativevalues.t) (x_e_97 : Nativevalues.t) =
+    (if is_accu x_e_97 then
+      mk_fix_accu [| 1 |] 0 (fixtype_get_3 ) (normtbl_get_3 ) x_s_96 x_e_97
+    else
+      begin match Obj.magic (x_e_97) with
+      | Accu_NClassicalRealizability_ShallowEmbedding___U039b__2 _ ->
+        mk_sw_accu
+        (get_match symbols_tbl 13) (cast_accu x_e_97) (pred_get_4 ) (
+        case_get_5 x_get_113 x_s_96)
+      | Construct_NClassicalRealizability_ShallowEmbedding___U039b__2_0  ->
+        get_value symbols_tbl 15
+      | Construct_NClassicalRealizability_ShallowEmbedding___U039b__2_1(
+      x_c_100,x_t_101,x_e'_102)  ->
+        (let x_anonymous_104
+        =
+         NCoq_Strings_String.const_NCoq_Strings_String_string_dec
+         x_s_96 x_c_100
+        in
+        begin match Obj.magic (x_anonymous_104) with
+        | NCoq_Init_Specif.Accu_NCoq_Init_Specif_sumbool_0 _ ->
+          mk_sw_accu
+          (get_match symbols_tbl 16) (cast_accu x_anonymous_104) (pred_get_4 ) (
+          case_get_4 x_get_113 x_e'_102 x_s_96 x_t_101)
+        | NCoq_Init_Specif.Construct_NCoq_Init_Specif_sumbool_0_0 _  ->
+          x_t_101
+        | NCoq_Init_Specif.Construct_NCoq_Init_Specif_sumbool_0_1 _  ->
+          x_get_113 x_s_96 x_e'_102
+        end)
+      end)
+  in
+  x_get_113
+
+let fixtype_closed_aux_4  =
+  [|mk_prod_accu
+    (get_name symbols_tbl 17) (NCoq_Init_Datatypes.indaccu_NCoq_Init_Datatypes_list_0
+                               NCoq_Strings_String.indaccu_NCoq_Strings_String_string_0) (
+    (fun (x_acc_114 : Nativevalues.t)
+    ->
+     mk_prod_accu
+     (get_name symbols_tbl 4) indaccu_NClassicalRealizability_ShallowEmbedding_term_0 (
+     (fun (x_t_115 : Nativevalues.t)
+     ->
+      NCoq_Init_Datatypes.indaccu_NCoq_Init_Datatypes_bool_0))))|]
+
+let pred_closed_aux_6 (x_t_119 : Nativevalues.t) =
+  NCoq_Init_Datatypes.indaccu_NCoq_Init_Datatypes_bool_0
+
+(* Hash = -1837441442939337132 *)
+let rec case_closed_aux_6  (x_anonymous_128 : Nativevalues.t) =
+  begin match Obj.magic (x_anonymous_128) with
+  | NCoq_Init_Specif.Accu_NCoq_Init_Specif_sumbool_0 _ ->
+    mk_sw_accu
+    (get_match symbols_tbl 16) (cast_accu x_anonymous_128) (pred_closed_aux_6 ) 
+    case_closed_aux_6
+  | NCoq_Init_Specif.Construct_NCoq_Init_Specif_sumbool_0_0 _  ->
+    (Obj.magic (NCoq_Init_Datatypes.Construct_NCoq_Init_Datatypes_bool_0_0) : Nativevalues.t)
+  | NCoq_Init_Specif.Construct_NCoq_Init_Specif_sumbool_0_1 _  ->
+    (Obj.magic (NCoq_Init_Datatypes.Construct_NCoq_Init_Datatypes_bool_0_1) : Nativevalues.t)
+  end
+
+(* Hash = -2062626277680317192 *)
+let rec case_closed_aux_7  (x_closed_aux_125 : Nativevalues.t) (x_acc_124 : Nativevalues.t) (x_anonymous_120 : Nativevalues.t) =
+  begin match Obj.magic (x_anonymous_120) with
+  | Accu_NClassicalRealizability_ShallowEmbedding_term_0 _ ->
+    mk_sw_accu
+    (get_match symbols_tbl 5) (cast_accu x_anonymous_120) (pred_closed_aux_6 ) (
+    case_closed_aux_7 x_closed_aux_125 x_acc_124)
+  | Construct_NClassicalRealizability_ShallowEmbedding_term_0_0 _  ->
+    (Obj.magic (NCoq_Init_Datatypes.Construct_NCoq_Init_Datatypes_bool_0_0) : Nativevalues.t)
+  | Construct_NClassicalRealizability_ShallowEmbedding_term_0_1(x_s_122,
+  x_t'_123)  ->
+    x_closed_aux_125
+    ((Obj.magic (NCoq_Init_Datatypes.Construct_NCoq_Init_Datatypes_list_0_1(
+     x_s_122,x_acc_124)) : Nativevalues.t)) x_t'_123
+  | Construct_NClassicalRealizability_ShallowEmbedding_term_0_2 x_n_126  ->
+    case_closed_aux_6
+    (NCoq_Lists_List.const_NCoq_Lists_List_in_dec
+     NCoq_Strings_String.indaccu_NCoq_Strings_String_string_0 NCoq_Strings_String.const_NCoq_Strings_String_string_dec 
+     x_n_126 x_acc_124)
+  | Construct_NClassicalRealizability_ShallowEmbedding_term_0_3(x_t__U2081__131,
+  x_t__U2082__132)  ->
+    NCoq_Init_Datatypes.const_NCoq_Init_Datatypes_andb
+    (x_closed_aux_125 x_acc_124 x_t__U2081__131) (x_closed_aux_125
+                                                  x_acc_124 x_t__U2082__132)
+  end
+
+let norm_closed_aux_4 (x_closed_aux_116 : Nativevalues.t) (x_acc_117 : Nativevalues.t) (x_t_118 : Nativevalues.t) =
+  case_closed_aux_7 x_closed_aux_116 x_acc_117 x_t_118
+
+let normtbl_closed_aux_4  =
+  [|norm_closed_aux_4|]
+
+let const_NClassicalRealizability_ShallowEmbedding_closed_aux =
+  let rec x_closed_aux_133 (x_acc_117 : Nativevalues.t) (x_t_118 : Nativevalues.t) =
+    (if is_accu x_t_118 then
+      mk_fix_accu [| 1 |] 0
+      (fixtype_closed_aux_4 ) (normtbl_closed_aux_4 ) x_acc_117 x_t_118
+    else
+      begin match Obj.magic (x_t_118) with
+      | Accu_NClassicalRealizability_ShallowEmbedding_term_0 _ ->
+        mk_sw_accu
+        (get_match symbols_tbl 5) (cast_accu x_t_118) (pred_closed_aux_6 ) (
+        case_closed_aux_7 x_closed_aux_133 x_acc_117)
+      | Construct_NClassicalRealizability_ShallowEmbedding_term_0_0 _  ->
+        (Obj.magic (NCoq_Init_Datatypes.Construct_NCoq_Init_Datatypes_bool_0_0) : Nativevalues.t)
+      | Construct_NClassicalRealizability_ShallowEmbedding_term_0_1(x_s_122,
+      x_t'_123)  ->
+        x_closed_aux_133
+        ((Obj.magic (NCoq_Init_Datatypes.Construct_NCoq_Init_Datatypes_list_0_1(
+         x_s_122,x_acc_117)) : Nativevalues.t)) x_t'_123
+      | Construct_NClassicalRealizability_ShallowEmbedding_term_0_2 x_n_126  ->
+        (let x_anonymous_128
+        =
+         NCoq_Lists_List.const_NCoq_Lists_List_in_dec
+         NCoq_Strings_String.indaccu_NCoq_Strings_String_string_0 NCoq_Strings_String.const_NCoq_Strings_String_string_dec 
+         x_n_126 x_acc_117
+        in
+        begin match Obj.magic (x_anonymous_128) with
+        | NCoq_Init_Specif.Accu_NCoq_Init_Specif_sumbool_0 _ ->
+          mk_sw_accu
+          (get_match symbols_tbl 16) (cast_accu x_anonymous_128) (pred_closed_aux_6
+                                                                  ) case_closed_aux_6
+        | NCoq_Init_Specif.Construct_NCoq_Init_Specif_sumbool_0_0 _  ->
+          (Obj.magic (NCoq_Init_Datatypes.Construct_NCoq_Init_Datatypes_bool_0_0) : Nativevalues.t)
+        | NCoq_Init_Specif.Construct_NCoq_Init_Specif_sumbool_0_1 _  ->
+          (Obj.magic (NCoq_Init_Datatypes.Construct_NCoq_Init_Datatypes_bool_0_1) : Nativevalues.t)
+        end)
+      | Construct_NClassicalRealizability_ShallowEmbedding_term_0_3(x_t__U2081__131,
+      x_t__U2082__132)  ->
+        NCoq_Init_Datatypes.const_NCoq_Init_Datatypes_andb
+        (x_closed_aux_133 x_acc_117 x_t__U2081__131) (x_closed_aux_133
+                                                      x_acc_117 x_t__U2082__132)
+      end)
+  in
+  x_closed_aux_133
+
+let const_NClassicalRealizability_ShallowEmbedding_closed =
+  lazy
+  (const_NClassicalRealizability_ShallowEmbedding_closed_aux
+   (Obj.magic (NCoq_Init_Datatypes.Construct_NCoq_Init_Datatypes_list_0_0) : Nativevalues.t))
+
+let indaccu_NClassicalRealizability_ShallowEmbedding_process_0 =
+  mk_ind_accu (get_ind symbols_tbl 18)
+
+type ind_NClassicalRealizability_ShallowEmbedding_process_0 =
+  | Accu_NClassicalRealizability_ShallowEmbedding_process_0 of Nativevalues.t
+  | Construct_NClassicalRealizability_ShallowEmbedding_process_0_0 of Nativevalues.t * Nativevalues.t
+
+
+let construct_NClassicalRealizability_ShallowEmbedding_process_0_0 (x_arg_0 : Nativevalues.t) (x_arg_1 : Nativevalues.t) =
+  (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_process_0_0(
+  x_arg_0,x_arg_1)) : Nativevalues.t)
+
+(* Hash = 2513848245871697645 *)
+let rec case_process_rect_8  (x_P_143 : Nativevalues.t) (x_f_142 : Nativevalues.t) (x_anonymous_139 : Nativevalues.t) =
+  begin match Obj.magic (x_anonymous_139) with
+  | Accu_NClassicalRealizability_ShallowEmbedding_process_0 _ ->
+    mk_sw_accu
+    (get_match symbols_tbl 19) (cast_accu x_anonymous_139) (pred_term_rect_0
+                                                            x_P_143) (
+    case_process_rect_8 x_P_143 x_f_142)
+  | Construct_NClassicalRealizability_ShallowEmbedding_process_0_0(x_anonymous_140,
+  x_anonymous_141)  ->
+    x_f_142 x_anonymous_140 x_anonymous_141
+  end
+
+let const_NClassicalRealizability_ShallowEmbedding_process_rect (x_P_134 : Nativevalues.t) (x_f_135 : Nativevalues.t) (x_p_136 : Nativevalues.t) =
+  begin match Obj.magic (x_p_136) with
+  | Accu_NClassicalRealizability_ShallowEmbedding_process_0 _ ->
+    mk_sw_accu
+    (get_match symbols_tbl 19) (cast_accu x_p_136) (pred_term_rect_0 x_P_134) (
+    case_process_rect_8 x_P_134 x_f_135)
+  | Construct_NClassicalRealizability_ShallowEmbedding_process_0_0(x_anonymous_140,
+  x_anonymous_141)  ->
+    x_f_135 x_anonymous_140 x_anonymous_141
+  end
+
+let const_NClassicalRealizability_ShallowEmbedding_process_ind (x_P_144 : Nativevalues.t) =
+  const_NClassicalRealizability_ShallowEmbedding_process_rect x_P_144
+
+let const_NClassicalRealizability_ShallowEmbedding_process_rec (x_P_145 : Nativevalues.t) =
+  const_NClassicalRealizability_ShallowEmbedding_process_rect x_P_145
+
+let const_NClassicalRealizability_ShallowEmbedding_red =
+  mk_constant_accu (get_const symbols_tbl 20)
+
+let const_NClassicalRealizability_ShallowEmbedding_red_trans =
+  mk_constant_accu (get_const symbols_tbl 21)
+
+let const_NClassicalRealizability_ShallowEmbedding_red_Lam =
+  mk_constant_accu (get_const symbols_tbl 22)
+
+let const_NClassicalRealizability_ShallowEmbedding_red_App =
+  mk_constant_accu (get_const symbols_tbl 23)
+
+let const_NClassicalRealizability_ShallowEmbedding_red_cc =
+  mk_constant_accu (get_const symbols_tbl 24)
+
+let const_NClassicalRealizability_ShallowEmbedding_red_k =
+  mk_constant_accu (get_const symbols_tbl 25)
+
+let const_NClassicalRealizability_ShallowEmbedding_red_Var =
+  mk_constant_accu (get_const symbols_tbl 26)
+
+let const_NClassicalRealizability_ShallowEmbedding_red_AppVar =
+  mk_constant_accu (get_const symbols_tbl 27)
+
+let fixtype_print_term_5  =
+  [|mk_prod_accu
+    (get_name symbols_tbl 4) indaccu_NClassicalRealizability_ShallowEmbedding_term_0 (
+    (fun (x_t_147 : Nativevalues.t)
+    ->
+     NCoq_Strings_String.indaccu_NCoq_Strings_String_string_0))|]
+
+let pred_print_term_9 (x_t_150 : Nativevalues.t) =
+  NCoq_Strings_String.indaccu_NCoq_Strings_String_string_0
+
+(* Hash = 4142310943814493315 *)
+let rec case_print_term_9  (x_print_term_156 : Nativevalues.t) (x_print_const_153 : Nativevalues.t) (x_anonymous_151 : Nativevalues.t) =
+  begin match Obj.magic (x_anonymous_151) with
+  | Accu_NClassicalRealizability_ShallowEmbedding_term_0 _ ->
+    mk_sw_accu
+    (get_match symbols_tbl 5) (cast_accu x_anonymous_151) (pred_print_term_9 ) (
+    case_print_term_9 x_print_term_156 x_print_const_153)
+  | Construct_NClassicalRealizability_ShallowEmbedding_term_0_0 x_c_152  ->
+    x_print_const_153 x_c_152
+  | Construct_NClassicalRealizability_ShallowEmbedding_term_0_1(x_n_154,
+  x_t_155)  ->
+    NCoq_Strings_String.const_NCoq_Strings_String_append
+    (get_value symbols_tbl 28) (NCoq_Strings_String.const_NCoq_Strings_String_append
+                                x_n_154 (NCoq_Strings_String.const_NCoq_Strings_String_append
+                                         (get_value symbols_tbl 29) (
+                                         x_print_term_156 x_t_155)))
+  | Construct_NClassicalRealizability_ShallowEmbedding_term_0_2 x_n_157  ->
+    x_n_157
+  | Construct_NClassicalRealizability_ShallowEmbedding_term_0_3(x_t__U2081__158,
+  x_t__U2082__159)  ->
+    NCoq_Strings_String.const_NCoq_Strings_String_append
+    (x_print_term_156 x_t__U2081__158) (NCoq_Strings_String.const_NCoq_Strings_String_append
+                                        (get_value symbols_tbl 29) (x_print_term_156
+                                                                    x_t__U2082__159))
+  end
+
+let norm_print_term_5 (x_print_const_160 : Nativevalues.t) (x_print_term_148 : Nativevalues.t) (x_t_149 : Nativevalues.t) =
+  case_print_term_9 x_print_term_148 x_print_const_160 x_t_149
+
+let normtbl_print_term_5  (x_print_const_160 : Nativevalues.t) =
+  [|norm_print_term_5 x_print_const_160|]
+
+let const_NClassicalRealizability_ShallowEmbedding_print_term (x_print_const_146 : Nativevalues.t) =
+  let rec x_print_term_161 (x_t_149 : Nativevalues.t) =
+    (if is_accu x_t_149 then
+      mk_fix_accu [| 0 |] 0
+      (fixtype_print_term_5 ) (normtbl_print_term_5 x_print_const_146) 
+      x_t_149
+    else
+      begin match Obj.magic (x_t_149) with
+      | Accu_NClassicalRealizability_ShallowEmbedding_term_0 _ ->
+        mk_sw_accu
+        (get_match symbols_tbl 5) (cast_accu x_t_149) (pred_print_term_9 ) (
+        case_print_term_9 x_print_term_161 x_print_const_146)
+      | Construct_NClassicalRealizability_ShallowEmbedding_term_0_0 x_c_152  ->
+        x_print_const_146 x_c_152
+      | Construct_NClassicalRealizability_ShallowEmbedding_term_0_1(x_n_154,
+      x_t_155)  ->
+        NCoq_Strings_String.const_NCoq_Strings_String_append
+        (get_value symbols_tbl 28) (NCoq_Strings_String.const_NCoq_Strings_String_append
+                                    x_n_154 (NCoq_Strings_String.const_NCoq_Strings_String_append
+                                             (get_value symbols_tbl 29) (
+                                             x_print_term_161 x_t_155)))
+      | Construct_NClassicalRealizability_ShallowEmbedding_term_0_2 x_n_157  ->
+        x_n_157
+      | Construct_NClassicalRealizability_ShallowEmbedding_term_0_3(x_t__U2081__158,
+      x_t__U2082__159)  ->
+        NCoq_Strings_String.const_NCoq_Strings_String_append
+        (x_print_term_161 x_t__U2081__158) (NCoq_Strings_String.const_NCoq_Strings_String_append
+                                            (get_value symbols_tbl 29) (
+                                            x_print_term_161 x_t__U2082__159))
+      end)
+  in
+  x_print_term_161
+
+let fixtype_print_clos_6  =
+  [|mk_prod_accu
+    (get_name symbols_tbl 30) indaccu_NClassicalRealizability_ShallowEmbedding___U039b__0 (
+    (fun (x_c_164 : Nativevalues.t)
+    ->
+     NCoq_Strings_String.indaccu_NCoq_Strings_String_string_0)); mk_prod_accu
+                                                                 (get_name
+                                                                  symbols_tbl 14) 
+                                                                 indaccu_NClassicalRealizability_ShallowEmbedding___U039b__1 (
+                                                                 (fun (x_s_165 : Nativevalues.t)
+                                                                 ->
+                                                                  NCoq_Strings_String.indaccu_NCoq_Strings_String_string_0)); 
+  mk_prod_accu
+  (get_name symbols_tbl 12) indaccu_NClassicalRealizability_ShallowEmbedding___U039b__2 (
+  (fun (x_e_166 : Nativevalues.t)
+  ->
+   NCoq_Strings_String.indaccu_NCoq_Strings_String_string_0))|]
+
+(* Hash = -1505106966090054192 *)
+let rec case_print_clos_10  (x_print_stack_178 : Nativevalues.t) (x_print_env_176 : Nativevalues.t) (x_print_const_175 : Nativevalues.t) (x_anonymous_172 : Nativevalues.t) =
+  begin match Obj.magic (x_anonymous_172) with
+  | Accu_NClassicalRealizability_ShallowEmbedding___U039b__0 _ ->
+    mk_sw_accu
+    (get_match symbols_tbl 9) (cast_accu x_anonymous_172) (pred_print_term_9 ) (
+    case_print_clos_10 x_print_stack_178 x_print_env_176 x_print_const_175)
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__0_0(x_t_173,
+  x_e_174)  ->
+    NCoq_Strings_String.const_NCoq_Strings_String_append
+    (const_NClassicalRealizability_ShallowEmbedding_print_term
+     x_print_const_175 x_t_173) (NCoq_Strings_String.const_NCoq_Strings_String_append
+                                 (get_value symbols_tbl 31) (x_print_env_176
+                                                             x_e_174))
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__0_1 x_s_177  ->
+    NCoq_Strings_String.const_NCoq_Strings_String_append
+    (get_value symbols_tbl 32) (NCoq_Strings_String.const_NCoq_Strings_String_append
+                                (x_print_stack_178 x_s_177) (get_value
+                                                             symbols_tbl 33))
+  end
+
+(* Hash = -274143085569205948 *)
+let rec case_print_clos_11  (x_print_stack_188 : Nativevalues.t) (x_print_clos_187 : Nativevalues.t) (x_print_sconst_184 : Nativevalues.t) (x_anonymous_182 : Nativevalues.t) =
+  begin match Obj.magic (x_anonymous_182) with
+  | Accu_NClassicalRealizability_ShallowEmbedding___U039b__1 _ ->
+    mk_sw_accu
+    (get_match symbols_tbl 11) (cast_accu x_anonymous_182) (pred_print_term_9 ) (
+    case_print_clos_11 x_print_stack_188 x_print_clos_187 x_print_sconst_184)
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__1_0 x___U03b1__183  ->
+    x_print_sconst_184 x___U03b1__183
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__1_1(x_c_185,
+  x_s'_186)  ->
+    NCoq_Strings_String.const_NCoq_Strings_String_append
+    (x_print_clos_187 x_c_185) (NCoq_Strings_String.const_NCoq_Strings_String_append
+                                (get_value symbols_tbl 34) (x_print_stack_188
+                                                            x_s'_186))
+  end
+
+(* Hash = 1419066506623797874 *)
+let rec case_print_clos_12  (x_print_env_205 : Nativevalues.t) (x_e'_204 : Nativevalues.t) (x_print_clos_200 : Nativevalues.t) (x_c_199 : Nativevalues.t) (x_n_198 : Nativevalues.t) (x_anonymous_197 : Nativevalues.t) =
+  begin match Obj.magic (x_anonymous_197) with
+  | Accu_NClassicalRealizability_ShallowEmbedding___U039b__2 _ ->
+    mk_sw_accu
+    (get_match symbols_tbl 13) (cast_accu x_anonymous_197) (pred_print_term_9 ) (
+    case_print_clos_12
+    x_print_env_205 x_e'_204 x_print_clos_200 x_c_199 x_n_198)
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__2_0  ->
+    NCoq_Strings_String.const_NCoq_Strings_String_append
+    x_n_198 (NCoq_Strings_String.const_NCoq_Strings_String_append
+             (get_value symbols_tbl 36) (x_print_clos_200 x_c_199))
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__2_1(_,_,_)  ->
+    NCoq_Strings_String.const_NCoq_Strings_String_append
+    x_n_198 (NCoq_Strings_String.const_NCoq_Strings_String_append
+             (get_value symbols_tbl 36) (NCoq_Strings_String.const_NCoq_Strings_String_append
+                                         (x_print_clos_200 x_c_199) (
+                                         NCoq_Strings_String.const_NCoq_Strings_String_append
+                                         (get_value symbols_tbl 37) (
+                                         x_print_env_205 x_e'_204))))
+  end
+
+(* Hash = 1396589266838630427 *)
+let rec case_print_clos_13  (x_print_clos_207 : Nativevalues.t) (x_print_env_206 : Nativevalues.t) (x_anonymous_192 : Nativevalues.t) =
+  begin match Obj.magic (x_anonymous_192) with
+  | Accu_NClassicalRealizability_ShallowEmbedding___U039b__2 _ ->
+    mk_sw_accu
+    (get_match symbols_tbl 13) (cast_accu x_anonymous_192) (pred_print_term_9 ) (
+    case_print_clos_13 x_print_clos_207 x_print_env_206)
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__2_0  ->
+    get_value symbols_tbl 35
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__2_1(x_n_193,
+  x_c_194,x_e'_195)  ->
+    case_print_clos_12
+    x_print_env_206 x_e'_195 x_print_clos_207 x_c_194 x_n_193 x_e'_195
+  end
+
+let norm_print_clos_6 (x_print_sconst_189 : Nativevalues.t) (x_print_const_179 : Nativevalues.t) (x_print_clos_167 : Nativevalues.t) (x_print_stack_168 : Nativevalues.t) (x_print_env_169 : Nativevalues.t) (x_c_170 : Nativevalues.t) =
+  case_print_clos_10
+  x_print_stack_168 x_print_env_169 x_print_const_179 x_c_170
+
+let norm_print_clos_7 (x_print_sconst_189 : Nativevalues.t) (x_print_const_179 : Nativevalues.t) (x_print_clos_167 : Nativevalues.t) (x_print_stack_168 : Nativevalues.t) (x_print_env_169 : Nativevalues.t) (x_s_180 : Nativevalues.t) =
+  case_print_clos_11
+  x_print_stack_168 x_print_clos_167 x_print_sconst_189 x_s_180
+
+let norm_print_clos_8 (x_print_sconst_189 : Nativevalues.t) (x_print_const_179 : Nativevalues.t) (x_print_clos_167 : Nativevalues.t) (x_print_stack_168 : Nativevalues.t) (x_print_env_169 : Nativevalues.t) (x_e_190 : Nativevalues.t) =
+  case_print_clos_13 x_print_clos_167 x_print_env_169 x_e_190
+
+let normtbl_print_clos_6  (x_print_sconst_189 : Nativevalues.t) (x_print_const_179 : Nativevalues.t) =
+  [|norm_print_clos_6 x_print_sconst_189 x_print_const_179; norm_print_clos_7
+                                                            x_print_sconst_189 
+                                                            x_print_const_179; 
+  norm_print_clos_8 x_print_sconst_189 x_print_const_179|]
+
+let const_NClassicalRealizability_ShallowEmbedding_print_clos (x_print_const_162 : Nativevalues.t) (x_print_sconst_163 : Nativevalues.t) =
+  let rec x_print_clos_208 (x_c_170 : Nativevalues.t) =
+    (if is_accu x_c_170 then
+      mk_fix_accu [| 0; 0; 0 |] 0
+      (fixtype_print_clos_6 ) (normtbl_print_clos_6
+                               x_print_sconst_163 x_print_const_162) 
+      x_c_170
+    else
+      begin match Obj.magic (x_c_170) with
+      | Accu_NClassicalRealizability_ShallowEmbedding___U039b__0 _ ->
+        mk_sw_accu
+        (get_match symbols_tbl 9) (cast_accu x_c_170) (pred_print_term_9 ) (
+        case_print_clos_10
+        x_print_stack_209 x_print_env_210 x_print_const_162)
+      | Construct_NClassicalRealizability_ShallowEmbedding___U039b__0_0(
+      x_t_173,x_e_174)  ->
+        NCoq_Strings_String.const_NCoq_Strings_String_append
+        (const_NClassicalRealizability_ShallowEmbedding_print_term
+         x_print_const_162 x_t_173) (NCoq_Strings_String.const_NCoq_Strings_String_append
+                                     (get_value symbols_tbl 31) (x_print_env_210
+                                                                 x_e_174))
+      | Construct_NClassicalRealizability_ShallowEmbedding___U039b__0_1 
+      x_s_177  ->
+        NCoq_Strings_String.const_NCoq_Strings_String_append
+        (get_value symbols_tbl 32) (NCoq_Strings_String.const_NCoq_Strings_String_append
+                                    (x_print_stack_209 x_s_177) (get_value
+                                                                 symbols_tbl 33))
+      end)
+  and x_print_stack_209 (x_s_180 : Nativevalues.t) =
+    (if is_accu x_s_180 then
+      mk_fix_accu [| 0; 0; 0 |] 1
+      (fixtype_print_clos_6 ) (normtbl_print_clos_6
+                               x_print_sconst_163 x_print_const_162) 
+      x_s_180
+    else
+      begin match Obj.magic (x_s_180) with
+      | Accu_NClassicalRealizability_ShallowEmbedding___U039b__1 _ ->
+        mk_sw_accu
+        (get_match symbols_tbl 11) (cast_accu x_s_180) (pred_print_term_9 ) (
+        case_print_clos_11
+        x_print_stack_209 x_print_clos_208 x_print_sconst_163)
+      | Construct_NClassicalRealizability_ShallowEmbedding___U039b__1_0 
+      x___U03b1__183  ->
+        x_print_sconst_163 x___U03b1__183
+      | Construct_NClassicalRealizability_ShallowEmbedding___U039b__1_1(
+      x_c_185,x_s'_186)  ->
+        NCoq_Strings_String.const_NCoq_Strings_String_append
+        (x_print_clos_208 x_c_185) (NCoq_Strings_String.const_NCoq_Strings_String_append
+                                    (get_value symbols_tbl 34) (x_print_stack_209
+                                                                x_s'_186))
+      end)
+  and x_print_env_210 (x_e_190 : Nativevalues.t) =
+    (if is_accu x_e_190 then
+      mk_fix_accu [| 0; 0; 0 |] 2
+      (fixtype_print_clos_6 ) (normtbl_print_clos_6
+                               x_print_sconst_163 x_print_const_162) 
+      x_e_190
+    else
+      begin match Obj.magic (x_e_190) with
+      | Accu_NClassicalRealizability_ShallowEmbedding___U039b__2 _ ->
+        mk_sw_accu
+        (get_match symbols_tbl 13) (cast_accu x_e_190) (pred_print_term_9 ) (
+        case_print_clos_13 x_print_clos_208 x_print_env_210)
+      | Construct_NClassicalRealizability_ShallowEmbedding___U039b__2_0  ->
+        get_value symbols_tbl 35
+      | Construct_NClassicalRealizability_ShallowEmbedding___U039b__2_1(
+      x_n_193,x_c_194,x_e'_195)  ->
+        begin match Obj.magic (x_e'_195) with
+        | Accu_NClassicalRealizability_ShallowEmbedding___U039b__2 _ ->
+          mk_sw_accu
+          (get_match symbols_tbl 13) (cast_accu x_e'_195) (pred_print_term_9 ) (
+          case_print_clos_12
+          x_print_env_210 x_e'_195 x_print_clos_208 x_c_194 x_n_193)
+        | Construct_NClassicalRealizability_ShallowEmbedding___U039b__2_0  ->
+          NCoq_Strings_String.const_NCoq_Strings_String_append
+          x_n_193 (NCoq_Strings_String.const_NCoq_Strings_String_append
+                   (get_value symbols_tbl 36) (x_print_clos_208 x_c_194))
+        | Construct_NClassicalRealizability_ShallowEmbedding___U039b__2_1(_,_,_)  ->
+          NCoq_Strings_String.const_NCoq_Strings_String_append
+          x_n_193 (NCoq_Strings_String.const_NCoq_Strings_String_append
+                   (get_value symbols_tbl 36) (NCoq_Strings_String.const_NCoq_Strings_String_append
+                                               (x_print_clos_208 x_c_194) (
+                                               NCoq_Strings_String.const_NCoq_Strings_String_append
+                                               (get_value symbols_tbl 37) (
+                                               x_print_env_210 x_e'_195))))
+        end
+      end)
+  in
+  x_print_clos_208
+
+let const_NClassicalRealizability_ShallowEmbedding_print_stack (x_print_const_211 : Nativevalues.t) (x_print_sconst_212 : Nativevalues.t) =
+  let rec x_print_clos_257 (x_c_219 : Nativevalues.t) =
+    (if is_accu x_c_219 then
+      mk_fix_accu [| 0; 0; 0 |] 0
+      (fixtype_print_clos_6 ) (normtbl_print_clos_6
+                               x_print_sconst_212 x_print_const_211) 
+      x_c_219
+    else
+      norm_print_clos_6
+      x_print_sconst_212 x_print_const_211 x_print_clos_257 x_print_stack_258 
+      x_print_env_259 x_c_219)
+  and x_print_stack_258 (x_s_229 : Nativevalues.t) =
+    (if is_accu x_s_229 then
+      mk_fix_accu [| 0; 0; 0 |] 1
+      (fixtype_print_clos_6 ) (normtbl_print_clos_6
+                               x_print_sconst_212 x_print_const_211) 
+      x_s_229
+    else
+      norm_print_clos_7
+      x_print_sconst_212 x_print_const_211 x_print_clos_257 x_print_stack_258 
+      x_print_env_259 x_s_229)
+  and x_print_env_259 (x_e_239 : Nativevalues.t) =
+    (if is_accu x_e_239 then
+      mk_fix_accu [| 0; 0; 0 |] 2
+      (fixtype_print_clos_6 ) (normtbl_print_clos_6
+                               x_print_sconst_212 x_print_const_211) 
+      x_e_239
+    else
+      norm_print_clos_8
+      x_print_sconst_212 x_print_const_211 x_print_clos_257 x_print_stack_258 
+      x_print_env_259 x_e_239)
+  in
+  x_print_stack_258
+
+let const_NClassicalRealizability_ShallowEmbedding_print_env (x_print_const_260 : Nativevalues.t) (x_print_sconst_261 : Nativevalues.t) =
+  let rec x_print_clos_306 (x_c_268 : Nativevalues.t) =
+    (if is_accu x_c_268 then
+      mk_fix_accu [| 0; 0; 0 |] 0
+      (fixtype_print_clos_6 ) (normtbl_print_clos_6
+                               x_print_sconst_261 x_print_const_260) 
+      x_c_268
+    else
+      norm_print_clos_6
+      x_print_sconst_261 x_print_const_260 x_print_clos_306 x_print_stack_307 
+      x_print_env_308 x_c_268)
+  and x_print_stack_307 (x_s_278 : Nativevalues.t) =
+    (if is_accu x_s_278 then
+      mk_fix_accu [| 0; 0; 0 |] 1
+      (fixtype_print_clos_6 ) (normtbl_print_clos_6
+                               x_print_sconst_261 x_print_const_260) 
+      x_s_278
+    else
+      norm_print_clos_7
+      x_print_sconst_261 x_print_const_260 x_print_clos_306 x_print_stack_307 
+      x_print_env_308 x_s_278)
+  and x_print_env_308 (x_e_288 : Nativevalues.t) =
+    (if is_accu x_e_288 then
+      mk_fix_accu [| 0; 0; 0 |] 2
+      (fixtype_print_clos_6 ) (normtbl_print_clos_6
+                               x_print_sconst_261 x_print_const_260) 
+      x_e_288
+    else
+      norm_print_clos_8
+      x_print_sconst_261 x_print_const_260 x_print_clos_306 x_print_stack_307 
+      x_print_env_308 x_e_288)
+  in
+  x_print_env_308
+
+let const_NClassicalRealizability_ShallowEmbedding_Id =
+  lazy (get_value symbols_tbl 38)
+
+let const_NClassicalRealizability_ShallowEmbedding_nId =
+  lazy (get_value symbols_tbl 39)
+
+let const_NClassicalRealizability_ShallowEmbedding_tt =
+  lazy (get_value symbols_tbl 40)
+
+let const_NClassicalRealizability_ShallowEmbedding_ff =
+  lazy (get_value symbols_tbl 41)
+
+let const_NClassicalRealizability_ShallowEmbedding___U03b4_ =
+  lazy (get_value symbols_tbl 39)
+
+let const_NClassicalRealizability_ShallowEmbedding___U03a9_ =
+  lazy
+  ((Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+   Lazy.force const_NClassicalRealizability_ShallowEmbedding___U03b4_),(
+   Lazy.force const_NClassicalRealizability_ShallowEmbedding___U03b4_))) : Nativevalues.t))
+
+let const_NClassicalRealizability_ShallowEmbedding_em =
+  lazy
+  ((Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+   get_value symbols_tbl 42),((Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                              get_value symbols_tbl 43),((Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                         (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_0 
+                                                         const_NClassicalRealizability_ShallowEmbedding_callcc) : Nativevalues.t)),(
+                                                         get_value
+                                                         symbols_tbl 44))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t))
+
+let const_NClassicalRealizability_ShallowEmbedding_Y =
+  lazy (get_value symbols_tbl 45)
+
+let const_NClassicalRealizability_ShallowEmbedding___U03a9__red =
+  mk_constant_accu (get_const symbols_tbl 46)
+
+let const_NClassicalRealizability_ShallowEmbedding_caron1 (x_op_309 : Nativevalues.t) =
+  (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+  get_value symbols_tbl 47),((Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                             get_value symbols_tbl 48),((Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 49),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3(
+                                                        x_op_309,(get_value
+                                                                  symbols_tbl 50))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)
+
+let const_NClassicalRealizability_ShallowEmbedding_caron2 (x_op_310 : Nativevalues.t) =
+  (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+  get_value symbols_tbl 47),((Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                             get_value symbols_tbl 48),((Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 49),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 51),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                        get_value
+                                                        symbols_tbl 52),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 53),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3(
+                                                        x_op_310,(get_value
+                                                                  symbols_tbl 50))) : Nativevalues.t)),(
+                                                        get_value
+                                                        symbols_tbl 54))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)
+
+let const_NClassicalRealizability_ShallowEmbedding_caron3 (x_op_311 : Nativevalues.t) =
+  (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+  get_value symbols_tbl 47),((Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                             get_value symbols_tbl 48),((Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 49),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 51),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                        get_value
+                                                        symbols_tbl 52),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 53),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 55),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                        get_value
+                                                        symbols_tbl 56),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 57),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3(
+                                                        x_op_311,(get_value
+                                                                  symbols_tbl 50))) : Nativevalues.t)),(
+                                                        get_value
+                                                        symbols_tbl 54))) : Nativevalues.t)),(
+                                                        get_value
+                                                        symbols_tbl 58))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)
+
+let const_NClassicalRealizability_ShallowEmbedding_caron4 (x_op_312 : Nativevalues.t) =
+  (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+  get_value symbols_tbl 47),((Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                             get_value symbols_tbl 48),((Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 49),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 51),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                        get_value
+                                                        symbols_tbl 52),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 53),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 55),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                        get_value
+                                                        symbols_tbl 56),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 57),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 59),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                        get_value
+                                                        symbols_tbl 60),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 61),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3(
+                                                        x_op_312,(get_value
+                                                                  symbols_tbl 50))) : Nativevalues.t)),(
+                                                        get_value
+                                                        symbols_tbl 54))) : Nativevalues.t)),(
+                                                        get_value
+                                                        symbols_tbl 58))) : Nativevalues.t)),(
+                                                        get_value
+                                                        symbols_tbl 62))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)
+
+let const_NClassicalRealizability_ShallowEmbedding_rel_caron1 (x_rel_313 : Nativevalues.t) =
+  (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+  get_value symbols_tbl 47),((Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                             get_value symbols_tbl 48),((Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 49),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3(
+                                                        x_rel_313,(get_value
+                                                                   symbols_tbl 50))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)
+
+let const_NClassicalRealizability_ShallowEmbedding_rel_caron2 (x_rel_314 : Nativevalues.t) =
+  (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+  get_value symbols_tbl 47),((Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                             get_value symbols_tbl 48),((Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 49),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 51),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                        get_value
+                                                        symbols_tbl 52),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 53),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3(
+                                                        x_rel_314,(get_value
+                                                                   symbols_tbl 50))) : Nativevalues.t)),(
+                                                        get_value
+                                                        symbols_tbl 54))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)
+
+let const_NClassicalRealizability_ShallowEmbedding_rel_caron3 (x_rel_315 : Nativevalues.t) =
+  (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+  get_value symbols_tbl 47),((Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                             get_value symbols_tbl 48),((Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 49),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 51),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                        get_value
+                                                        symbols_tbl 52),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 53),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 55),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                        get_value
+                                                        symbols_tbl 56),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 57),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3(
+                                                        x_rel_315,(get_value
+                                                                   symbols_tbl 50))) : Nativevalues.t)),(
+                                                        get_value
+                                                        symbols_tbl 54))) : Nativevalues.t)),(
+                                                        get_value
+                                                        symbols_tbl 58))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)
+
+let const_NClassicalRealizability_ShallowEmbedding_rel_caron4 (x_rel_316 : Nativevalues.t) =
+  (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+  get_value symbols_tbl 47),((Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                             get_value symbols_tbl 48),((Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 49),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 51),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                        get_value
+                                                        symbols_tbl 52),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 53),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 55),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                        get_value
+                                                        symbols_tbl 56),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 57),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 59),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                        get_value
+                                                        symbols_tbl 60),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_1((
+                                                        get_value
+                                                        symbols_tbl 61),(
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3((
+                                                        (Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_term_0_3(
+                                                        x_rel_316,(get_value
+                                                                   symbols_tbl 50))) : Nativevalues.t)),(
+                                                        get_value
+                                                        symbols_tbl 54))) : Nativevalues.t)),(
+                                                        get_value
+                                                        symbols_tbl 58))) : Nativevalues.t)),(
+                                                        get_value
+                                                        symbols_tbl 62))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)))) : Nativevalues.t)
+
+let const_NClassicalRealizability_ShallowEmbedding_pole =
+  mk_constant_accu (get_const symbols_tbl 63)
+
+let const_NClassicalRealizability_ShallowEmbedding_anti_evaluation =
+  mk_constant_accu (get_const symbols_tbl 64)
+
+let const_NClassicalRealizability_ShallowEmbedding_formula =
+  mk_prod_accu
+  (get_name symbols_tbl 66) indaccu_NClassicalRealizability_ShallowEmbedding___U039b__1 (
+  (fun (x_anonymous_317 : Nativevalues.t)
+  ->
+   mk_sort_accu (get_sort symbols_tbl 65)))
+
+let const_NClassicalRealizability_ShallowEmbedding_Fval (x_F_318 : Nativevalues.t) (x___U03c0__319 : Nativevalues.t) =
+  x_F_318 x___U03c0__319
+
+let const_NClassicalRealizability_ShallowEmbedding_realizes (x_t_320 : Nativevalues.t) (x_F_321 : Nativevalues.t) =
+  mk_prod_accu
+  (get_name symbols_tbl 10) indaccu_NClassicalRealizability_ShallowEmbedding___U039b__1 (
+  (fun (x___U03c0__322 : Nativevalues.t)
+  ->
+   mk_prod_accu
+   (get_name symbols_tbl 66) (const_NClassicalRealizability_ShallowEmbedding_Fval
+                              x_F_321 x___U03c0__322) ((fun (x_anonymous_323 : Nativevalues.t)
+                                                       ->
+                                                        const_NClassicalRealizability_ShallowEmbedding_pole
+                                                        ((Obj.magic (Construct_NClassicalRealizability_ShallowEmbedding_process_0_0(
+                                                         x_t_320,x___U03c0__322)) : Nativevalues.t))))))
+
+let pred_Impl_22 (x___U03c0__327 : Nativevalues.t) =
+  mk_sort_accu (get_sort symbols_tbl 65)
+
+(* Hash = 151057800857240603 *)
+let rec case_Impl_22  (x_B_333 : Nativevalues.t) (x_A_332 : Nativevalues.t) (x_anonymous_328 : Nativevalues.t) =
+  begin match Obj.magic (x_anonymous_328) with
+  | Accu_NClassicalRealizability_ShallowEmbedding___U039b__1 _ ->
+    mk_sw_accu
+    (get_match symbols_tbl 11) (cast_accu x_anonymous_328) (pred_Impl_22 ) (
+    case_Impl_22 x_B_333 x_A_332)
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__1_0 _  ->
+    NCoq_Init_Logic.indaccu_NCoq_Init_Logic_False_0
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__1_1(x_t_330,
+  x___U03c0_'_331)  ->
+    NCoq_Init_Logic.indaccu_NCoq_Init_Logic_and_0
+    (const_NClassicalRealizability_ShallowEmbedding_realizes x_t_330 x_A_332) (
+    const_NClassicalRealizability_ShallowEmbedding_Fval
+    x_B_333 x___U03c0_'_331)
+  end
+
+let const_NClassicalRealizability_ShallowEmbedding_Impl (x_A_324 : Nativevalues.t) (x_B_325 : Nativevalues.t) (x___U03c0__326 : Nativevalues.t) =
+  begin match Obj.magic (x___U03c0__326) with
+  | Accu_NClassicalRealizability_ShallowEmbedding___U039b__1 _ ->
+    mk_sw_accu
+    (get_match symbols_tbl 11) (cast_accu x___U03c0__326) (pred_Impl_22 ) (
+    case_Impl_22 x_B_325 x_A_324)
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__1_0 _  ->
+    NCoq_Init_Logic.indaccu_NCoq_Init_Logic_False_0
+  | Construct_NClassicalRealizability_ShallowEmbedding___U039b__1_1(x_t_330,
+  x___U03c0_'_331)  ->
+    NCoq_Init_Logic.indaccu_NCoq_Init_Logic_and_0
+    (const_NClassicalRealizability_ShallowEmbedding_realizes x_t_330 x_A_324) (
+    const_NClassicalRealizability_ShallowEmbedding_Fval
+    x_B_325 x___U03c0_'_331)
+  end
+
+let const_NClassicalRealizability_ShallowEmbedding_Forall (x_T_334 : Nativevalues.t) (x_f_335 : Nativevalues.t) (x___U03c0__336 : Nativevalues.t) =
+  NCoq_Init_Logic.indaccu_NCoq_Init_Logic_ex_0
+  x_T_334 ((fun (x_t_337 : Nativevalues.t)
+           ->
+            const_NClassicalRealizability_ShallowEmbedding_Fval
+            (x_f_335 x_t_337) x___U03c0__336))
+
+let const_NClassicalRealizability_ShallowEmbedding_Relativisation (x_T_338 : Nativevalues.t) (x_P_339 : Nativevalues.t) =
+  mk_prod_accu
+  (get_name symbols_tbl 66) (mk_prod_accu
+                             (get_name symbols_tbl 66) x_T_338 ((fun (x_anonymous_340 : Nativevalues.t)
+                                                                ->
+                                                                 const_NClassicalRealizability_ShallowEmbedding_formula))) (
+  (fun (x_anonymous_341 : Nativevalues.t)
+  ->
+   mk_prod_accu
+   (get_name symbols_tbl 66) x_T_338 ((fun (x_anonymous_342 : Nativevalues.t)
+                                      ->
+                                       const_NClassicalRealizability_ShallowEmbedding_formula))))
+
+let const_NClassicalRealizability_ShallowEmbedding_Rel (x_T_343 : Nativevalues.t) (x_P_344 : Nativevalues.t) (x_Relativisation_345 : Nativevalues.t) =
+  x_Relativisation_345
+
+let const_NClassicalRealizability_ShallowEmbedding_now_Rel (x_T_346 : Nativevalues.t) (x_P_347 : Nativevalues.t) (x_f_348 : Nativevalues.t) =
+  x_f_348
+
+let const_NClassicalRealizability_ShallowEmbedding_make_Rel (x_T_349 : Nativevalues.t) (x_P_350 : Nativevalues.t) (x_f_351 : Nativevalues.t) (x_t_352 : Nativevalues.t) =
+  const_NClassicalRealizability_ShallowEmbedding_Impl
+  (x_P_350 x_t_352) (x_f_351 x_t_352)
+
+let const_NClassicalRealizability_ShallowEmbedding_ForallR (x_T_353 : Nativevalues.t) (x_P_354 : Nativevalues.t) (x_H_355 : Nativevalues.t) (x_f_356 : Nativevalues.t) (x___U03c0__357 : Nativevalues.t) =
+  NCoq_Init_Logic.indaccu_NCoq_Init_Logic_ex_0
+  x_T_353 ((fun (x_t_358 : Nativevalues.t)
+           ->
+            const_NClassicalRealizability_ShallowEmbedding_Fval
+            (const_NClassicalRealizability_ShallowEmbedding_Rel
+             x_T_353 x_P_354 x_H_355 x_f_356 x_t_358) x___U03c0__357))
+
+let const_NClassicalRealizability_ShallowEmbedding_ForallR2 (x_T__U2081__359 : Nativevalues.t) (x_T__U2082__360 : Nativevalues.t) (x_P__U2081__361 : Nativevalues.t) (x_P__U2082__362 : Nativevalues.t) (x_H_363 : Nativevalues.t) (x_H0_364 : Nativevalues.t) (x_f_365 : Nativevalues.t) (x___U03c0__366 : Nativevalues.t) =
+  NCoq_Init_Logic.indaccu_NCoq_Init_Logic_ex_0
+  x_T__U2081__359 ((fun (x_t__U2081__367 : Nativevalues.t)
+                   ->
+                    NCoq_Init_Logic.indaccu_NCoq_Init_Logic_ex_0
+                    x_T__U2082__360 ((fun (x_t__U2082__368 : Nativevalues.t)
+                                     ->
+                                      const_NClassicalRealizability_ShallowEmbedding_Fval
+                                      (const_NClassicalRealizability_ShallowEmbedding_Rel
+                                       x_T__U2081__359 x_P__U2081__361 
+                                       x_H_363 ((fun (x_t_369 : Nativevalues.t)
+                                                ->
+                                                 const_NClassicalRealizability_ShallowEmbedding_Rel
+                                                 x_T__U2082__360 x_P__U2082__362 
+                                                 x_H0_364 (x_f_365 x_t_369) 
+                                                 x_t__U2082__368)) x_t__U2081__367) 
+                                      x___U03c0__366))))
+
+let const_NClassicalRealizability_ShallowEmbedding_ForallR3 (x_T__U2081__370 : Nativevalues.t) (x_T__U2082__371 : Nativevalues.t) (x_T__U2083__372 : Nativevalues.t) (x_P__U2081__373 : Nativevalues.t) (x_P__U2082__374 : Nativevalues.t) (x_P__U2083__375 : Nativevalues.t) (x_H_376 : Nativevalues.t) (x_H0_377 : Nativevalues.t) (x_H1_378 : Nativevalues.t) (x_f_379 : Nativevalues.t) (x___U03c0__380 : Nativevalues.t) =
+  NCoq_Init_Logic.indaccu_NCoq_Init_Logic_ex_0
+  x_T__U2081__370 ((fun (x_t__U2081__381 : Nativevalues.t)
+                   ->
+                    NCoq_Init_Logic.indaccu_NCoq_Init_Logic_ex_0
+                    x_T__U2082__371 ((fun (x_t__U2082__382 : Nativevalues.t)
+                                     ->
+                                      NCoq_Init_Logic.indaccu_NCoq_Init_Logic_ex_0
+                                      x_T__U2083__372 ((fun (x_t__U2083__383 : Nativevalues.t)
+                                                       ->
+                                                        const_NClassicalRealizability_ShallowEmbedding_Fval
+                                                        (const_NClassicalRealizability_ShallowEmbedding_Rel
+                                                         x_T__U2081__370 
+                                                         x_P__U2081__373 
+                                                         x_H_376 ((fun (x_t_384 : Nativevalues.t)
+                                                                  ->
+                                                                   const_NClassicalRealizability_ShallowEmbedding_Rel
+                                                                   x_T__U2082__371 
+                                                                   x_P__U2082__374 
+                                                                   x_H0_377 (
+                                                                   (fun (x_t'_385 : Nativevalues.t)
+                                                                   ->
+                                                                    const_NClassicalRealizability_ShallowEmbedding_Rel
+                                                                    x_T__U2083__372 
+                                                                    x_P__U2083__375 
+                                                                    x_H1_378 (
+                                                                    x_f_379
+                                                                    x_t_384 
+                                                                    x_t'_385) 
+                                                                    x_t__U2083__383)) 
+                                                                   x_t__U2082__382)) 
+                                                         x_t__U2081__381) 
+                                                        x___U03c0__380))))))
+
+let const_NClassicalRealizability_ShallowEmbedding_ForallR4 (x_T__U2081__386 : Nativevalues.t) (x_T__U2082__387 : Nativevalues.t) (x_T__U2083__388 : Nativevalues.t) (x_T__U2084__389 : Nativevalues.t) (x_P__U2081__390 : Nativevalues.t) (x_P__U2082__391 : Nativevalues.t) (x_P__U2083__392 : Nativevalues.t) (x_P__U2084__393 : Nativevalues.t) (x_H_394 : Nativevalues.t) (x_H0_395 : Nativevalues.t) (x_H1_396 : Nativevalues.t) (x_H2_397 : Nativevalues.t) (x_f_398 : Nativevalues.t) (x___U03c0__399 : Nativevalues.t) =
+  NCoq_Init_Logic.indaccu_NCoq_Init_Logic_ex_0
+  x_T__U2081__386 ((fun (x_t__U2081__400 : Nativevalues.t)
+                   ->
+                    NCoq_Init_Logic.indaccu_NCoq_Init_Logic_ex_0
+                    x_T__U2082__387 ((fun (x_t__U2082__401 : Nativevalues.t)
+                                     ->
+                                      NCoq_Init_Logic.indaccu_NCoq_Init_Logic_ex_0
+                                      x_T__U2083__388 ((fun (x_t__U2083__402 : Nativevalues.t)
+                                                       ->
+                                                        NCoq_Init_Logic.indaccu_NCoq_Init_Logic_ex_0
+                                                        x_T__U2084__389 (
+                                                        (fun (x_t__U2084__403 : Nativevalues.t)
+                                                        ->
+                                                         const_NClassicalRealizability_ShallowEmbedding_Fval
+                                                         (const_NClassicalRealizability_ShallowEmbedding_Rel
+                                                          x_T__U2081__386 
+                                                          x_P__U2081__390 
+                                                          x_H_394 ((fun (x_t_404 : Nativevalues.t)
+                                                                   ->
+                                                                    const_NClassicalRealizability_ShallowEmbedding_Rel
+                                                                    x_T__U2082__387 
+                                                                    x_P__U2082__391 
+                                                                    x_H0_395 (
+                                                                    (fun (x_t'_405 : Nativevalues.t)
+                                                                    ->
+                                                                     
+                                                                    const_NClassicalRealizability_ShallowEmbedding_Rel
+                                                                    x_T__U2083__388 
+                                                                    x_P__U2083__392 
+                                                                    x_H1_396 (
+                                                                    (fun (x_t''_406 : Nativevalues.t)
+                                                                    ->
+                                                                     
+                                                                    const_NClassicalRealizability_ShallowEmbedding_Rel
+                                                                    x_T__U2084__389 
+                                                                    x_P__U2084__393 
+                                                                    x_H2_397 (
+                                                                    x_f_398
+                                                                    x_t_404 
+                                                                    x_t'_405 
+                                                                    x_t''_406) 
+                                                                    x_t__U2084__403)) 
+                                                                    x_t__U2083__402)) 
+                                                                    x_t__U2082__401)) 
+                                                          x_t__U2081__400) 
+                                                         x___U03c0__399))))))))
+
+let const_NClassicalRealizability_ShallowEmbedding_ForallR5 (x_T__U2081__407 : Nativevalues.t) (x_T__U2082__408 : Nativevalues.t) (x_T__U2083__409 : Nativevalues.t) (x_T__U2084__410 : Nativevalues.t) (x_T__U2085__411 : Nativevalues.t) (x_P__U2081__412 : Nativevalues.t) (x_P__U2082__413 : Nativevalues.t) (x_P__U2083__414 : Nativevalues.t) (x_P__U2084__415 : Nativevalues.t) (x_P__U2085__416 : Nativevalues.t) (x_H_417 : Nativevalues.t) (x_H0_418 : Nativevalues.t) (x_H1_419 : Nativevalues.t) (x_H2_420 : Nativevalues.t) (x_H3_421 : Nativevalues.t) (x_f_422 : Nativevalues.t) (x___U03c0__423 : Nativevalues.t) =
+  NCoq_Init_Logic.indaccu_NCoq_Init_Logic_ex_0
+  x_T__U2081__407 ((fun (x_t__U2081__424 : Nativevalues.t)
+                   ->
+                    NCoq_Init_Logic.indaccu_NCoq_Init_Logic_ex_0
+                    x_T__U2082__408 ((fun (x_t__U2082__425 : Nativevalues.t)
+                                     ->
+                                      NCoq_Init_Logic.indaccu_NCoq_Init_Logic_ex_0
+                                      x_T__U2083__409 ((fun (x_t__U2083__426 : Nativevalues.t)
+                                                       ->
+                                                        NCoq_Init_Logic.indaccu_NCoq_Init_Logic_ex_0
+                                                        x_T__U2084__410 (
+                                                        (fun (x_t__U2084__427 : Nativevalues.t)
+                                                        ->
+                                                         NCoq_Init_Logic.indaccu_NCoq_Init_Logic_ex_0
+                                                         x_T__U2085__411 (
+                                                         (fun (x_t__U2085__428 : Nativevalues.t)
+                                                         ->
+                                                          const_NClassicalRealizability_ShallowEmbedding_Fval
+                                                          (const_NClassicalRealizability_ShallowEmbedding_Rel
+                                                           x_T__U2081__407 
+                                                           x_P__U2081__412 
+                                                           x_H_417 ((fun (x_t_429 : Nativevalues.t)
+                                                                    ->
+                                                                     
+                                                                    const_NClassicalRealizability_ShallowEmbedding_Rel
+                                                                    x_T__U2082__408 
+                                                                    x_P__U2082__413 
+                                                                    x_H0_418 (
+                                                                    (fun (x_t'_430 : Nativevalues.t)
+                                                                    ->
+                                                                     
+                                                                    const_NClassicalRealizability_ShallowEmbedding_Rel
+                                                                    x_T__U2083__409 
+                                                                    x_P__U2083__414 
+                                                                    x_H1_419 (
+                                                                    (fun (x_t''_431 : Nativevalues.t)
+                                                                    ->
+                                                                     
+                                                                    const_NClassicalRealizability_ShallowEmbedding_Rel
+                                                                    x_T__U2084__410 
+                                                                    x_P__U2084__415 
+                                                                    x_H2_420 (
+                                                                    (fun (x_t'''_432 : Nativevalues.t)
+                                                                    ->
+                                                                     
+                                                                    const_NClassicalRealizability_ShallowEmbedding_Rel
+                                                                    x_T__U2085__411 
+                                                                    x_P__U2085__416 
+                                                                    x_H3_421 (
+                                                                    x_f_422
+                                                                    x_t_429 
+                                                                    x_t'_430 
+                                                                    x_t''_431 
+                                                                    x_t'''_432) 
+                                                                    x_t__U2085__428)) 
+                                                                    x_t__U2084__427)) 
+                                                                    x_t__U2083__426)) 
+                                                                    x_t__U2082__425)) 
+                                                           x_t__U2081__424) 
+                                                          x___U03c0__423))))))))))
+
+let const_NClassicalRealizability_ShallowEmbedding_fun_Pred (x_T_433 : Nativevalues.t) (x_T'_434 : Nativevalues.t) (x_P_435 : Nativevalues.t) (x_P'_436 : Nativevalues.t) (x_f_437 : Nativevalues.t) =
+  const_NClassicalRealizability_ShallowEmbedding_ForallR
+  x_T_433 x_P_435 (const_NClassicalRealizability_ShallowEmbedding_make_Rel
+                   x_T_433 x_P_435) ((fun (x_x_438 : Nativevalues.t)
+                                     ->
+                                      x_P'_436 (x_f_437 x_x_438)))
+
+let const_NClassicalRealizability_ShallowEmbedding_fun_Rel (x_T_439 : Nativevalues.t) (x_T'_440 : Nativevalues.t) (x_P_441 : Nativevalues.t) (x_P'_442 : Nativevalues.t) (x_H_443 : Nativevalues.t) =
+  const_NClassicalRealizability_ShallowEmbedding_now_Rel
+  (mk_prod_accu
+   (get_name symbols_tbl 66) x_T_439 ((fun (x_anonymous_444 : Nativevalues.t)
+                                      ->
+                                       x_T'_440))) (const_NClassicalRealizability_ShallowEmbedding_fun_Pred
+                                                    x_T_439 x_T'_440 
+                                                    x_P_441 x_P'_442) (
+  (fun (x_f_445 : Nativevalues.t) (x_t_446 : Nativevalues.t)
+  ->
+   const_NClassicalRealizability_ShallowEmbedding_Impl
+   (const_NClassicalRealizability_ShallowEmbedding_ForallR
+    x_T_439 x_P_441 x_H_443 ((fun (x_x_447 : Nativevalues.t)
+                             ->
+                              x_P'_442 (x_t_446 x_x_447)))) (x_f_445 x_t_446)))
+
+let const_NClassicalRealizability_ShallowEmbedding_Top (x_anonymous_448 : Nativevalues.t) =
+  NCoq_Init_Logic.indaccu_NCoq_Init_Logic_False_0
+
+let const_NClassicalRealizability_ShallowEmbedding_bot =
+  lazy
+  (const_NClassicalRealizability_ShallowEmbedding_Forall
+   const_NClassicalRealizability_ShallowEmbedding_formula ((fun (x_Z_449 : Nativevalues.t)
+                                                           ->
+                                                            x_Z_449)))
+
+let const_NClassicalRealizability_ShallowEmbedding_one =
+  lazy
+  (const_NClassicalRealizability_ShallowEmbedding_Forall
+   const_NClassicalRealizability_ShallowEmbedding_formula ((fun (x_Z_450 : Nativevalues.t)
+                                                           ->
+                                                            const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_Z_450 x_Z_450)))
+
+let const_NClassicalRealizability_ShallowEmbedding_mapsto (x_c_451 : Nativevalues.t) (x_F_452 : Nativevalues.t) (x___U03c0__453 : Nativevalues.t) =
+  NCoq_Init_Logic.indaccu_NCoq_Init_Logic_and_0
+  x_c_451 (const_NClassicalRealizability_ShallowEmbedding_Fval
+           x_F_452 x___U03c0__453)
+
+let const_NClassicalRealizability_ShallowEmbedding_inter (x_A_454 : Nativevalues.t) (x_B_455 : Nativevalues.t) (x___U03c0__456 : Nativevalues.t) =
+  NCoq_Init_Logic.indaccu_NCoq_Init_Logic_or_0
+  (const_NClassicalRealizability_ShallowEmbedding_Fval x_A_454 x___U03c0__456) (
+  const_NClassicalRealizability_ShallowEmbedding_Fval x_B_455 x___U03c0__456)
+
+let const_NClassicalRealizability_ShallowEmbedding_and2 (x_A_457 : Nativevalues.t) (x_B_458 : Nativevalues.t) =
+  const_NClassicalRealizability_ShallowEmbedding_Forall
+  const_NClassicalRealizability_ShallowEmbedding_formula ((fun (x_Z_459 : Nativevalues.t)
+                                                          ->
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_A_457 (
+                                                            const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_B_458 x_Z_459)) 
+                                                           x_Z_459))
+
+let const_NClassicalRealizability_ShallowEmbedding_and3 (x_A_460 : Nativevalues.t) (x_B_461 : Nativevalues.t) (x_C_462 : Nativevalues.t) =
+  const_NClassicalRealizability_ShallowEmbedding_Forall
+  const_NClassicalRealizability_ShallowEmbedding_formula ((fun (x_Z_463 : Nativevalues.t)
+                                                          ->
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_A_460 (
+                                                            const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_B_461 (
+                                                            const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_C_462 x_Z_463))) 
+                                                           x_Z_463))
+
+let const_NClassicalRealizability_ShallowEmbedding_and4 (x_A_464 : Nativevalues.t) (x_B_465 : Nativevalues.t) (x_C_466 : Nativevalues.t) (x_D_467 : Nativevalues.t) =
+  const_NClassicalRealizability_ShallowEmbedding_Forall
+  const_NClassicalRealizability_ShallowEmbedding_formula ((fun (x_Z_468 : Nativevalues.t)
+                                                          ->
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_A_464 (
+                                                            const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_B_465 (
+                                                            const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_C_466 (
+                                                            const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_D_467 x_Z_468)))) 
+                                                           x_Z_468))
+
+let const_NClassicalRealizability_ShallowEmbedding_and5 (x_A_469 : Nativevalues.t) (x_B_470 : Nativevalues.t) (x_C_471 : Nativevalues.t) (x_D_472 : Nativevalues.t) (x_E_473 : Nativevalues.t) =
+  const_NClassicalRealizability_ShallowEmbedding_Forall
+  const_NClassicalRealizability_ShallowEmbedding_formula ((fun (x_Z_474 : Nativevalues.t)
+                                                          ->
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_A_469 (
+                                                            const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_B_470 (
+                                                            const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_C_471 (
+                                                            const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_D_472 (
+                                                            const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_E_473 x_Z_474))))) 
+                                                           x_Z_474))
+
+let const_NClassicalRealizability_ShallowEmbedding_and6 (x_A_475 : Nativevalues.t) (x_B_476 : Nativevalues.t) (x_C_477 : Nativevalues.t) (x_D_478 : Nativevalues.t) (x_E_479 : Nativevalues.t) (x_F_480 : Nativevalues.t) =
+  const_NClassicalRealizability_ShallowEmbedding_Forall
+  const_NClassicalRealizability_ShallowEmbedding_formula ((fun (x_Z_481 : Nativevalues.t)
+                                                          ->
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_A_475 (
+                                                            const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_B_476 (
+                                                            const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_C_477 (
+                                                            const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_D_478 (
+                                                            const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_E_479 (
+                                                            const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_F_480 x_Z_481)))))) 
+                                                           x_Z_481))
+
+let const_NClassicalRealizability_ShallowEmbedding_or2 (x_A_482 : Nativevalues.t) (x_B_483 : Nativevalues.t) =
+  const_NClassicalRealizability_ShallowEmbedding_Forall
+  const_NClassicalRealizability_ShallowEmbedding_formula ((fun (x_Z_484 : Nativevalues.t)
+                                                          ->
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_A_482 x_Z_484) (
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_B_483 x_Z_484) 
+                                                           x_Z_484)))
+
+let const_NClassicalRealizability_ShallowEmbedding_or3 (x_A_485 : Nativevalues.t) (x_B_486 : Nativevalues.t) (x_C_487 : Nativevalues.t) =
+  const_NClassicalRealizability_ShallowEmbedding_Forall
+  const_NClassicalRealizability_ShallowEmbedding_formula ((fun (x_Z_488 : Nativevalues.t)
+                                                          ->
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_A_485 x_Z_488) (
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_B_486 x_Z_488) (
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_C_487 x_Z_488) 
+                                                           x_Z_488))))
+
+let const_NClassicalRealizability_ShallowEmbedding_or4 (x_A_489 : Nativevalues.t) (x_B_490 : Nativevalues.t) (x_C_491 : Nativevalues.t) (x_D_492 : Nativevalues.t) =
+  const_NClassicalRealizability_ShallowEmbedding_Forall
+  const_NClassicalRealizability_ShallowEmbedding_formula ((fun (x_Z_493 : Nativevalues.t)
+                                                          ->
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_A_489 x_Z_493) (
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_B_490 x_Z_493) (
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_C_491 x_Z_493) (
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_D_492 x_Z_493) 
+                                                           x_Z_493)))))
+
+let const_NClassicalRealizability_ShallowEmbedding_or5 (x_A_494 : Nativevalues.t) (x_B_495 : Nativevalues.t) (x_C_496 : Nativevalues.t) (x_D_497 : Nativevalues.t) (x_E_498 : Nativevalues.t) =
+  const_NClassicalRealizability_ShallowEmbedding_Forall
+  const_NClassicalRealizability_ShallowEmbedding_formula ((fun (x_Z_499 : Nativevalues.t)
+                                                          ->
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_A_494 x_Z_499) (
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_B_495 x_Z_499) (
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_C_496 x_Z_499) (
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_D_497 x_Z_499) (
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_E_498 x_Z_499) 
+                                                           x_Z_499))))))
+
+let const_NClassicalRealizability_ShallowEmbedding_or6 (x_A_500 : Nativevalues.t) (x_B_501 : Nativevalues.t) (x_C_502 : Nativevalues.t) (x_D_503 : Nativevalues.t) (x_E_504 : Nativevalues.t) (x_F_505 : Nativevalues.t) =
+  const_NClassicalRealizability_ShallowEmbedding_Forall
+  const_NClassicalRealizability_ShallowEmbedding_formula ((fun (x_Z_506 : Nativevalues.t)
+                                                          ->
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_A_500 x_Z_506) (
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_B_501 x_Z_506) (
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_C_502 x_Z_506) (
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_D_503 x_Z_506) (
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_E_504 x_Z_506) (
+                                                           const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                           (const_NClassicalRealizability_ShallowEmbedding_Impl
+                                                            x_F_505 x_Z_506) 
+                                                           x_Z_506)))))))
+

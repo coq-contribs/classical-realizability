@@ -1,0 +1,137 @@
+open Nativevalues
+open Nativecode
+open Nativelib
+open Nativeconv
+open Declaremods
+let symbols_tbl =
+  get_library_symbols_tbl
+  (str_decode "8495a6be0000002400000004000000110000000da029537562747970696e67a036436c6173736963616c5265616c697a6162696c69747940")
+
+(* Time spent generating this code: 0.00000s *)
+let const_NClassicalRealizability_Subtyping_subtype (x_F_0 : Nativevalues.t) (x_F'_1 : Nativevalues.t) =
+  mk_prod_accu
+  (get_name symbols_tbl 1) NClassicalRealizability_ShallowEmbedding.indaccu_NClassicalRealizability_ShallowEmbedding___U039b__1 (
+  (fun (x___U03c0__2 : Nativevalues.t)
+  ->
+   mk_prod_accu
+   (get_name symbols_tbl 0) (NClassicalRealizability_ShallowEmbedding.const_NClassicalRealizability_ShallowEmbedding_Fval
+                             x_F'_1 x___U03c0__2) ((fun (x_anonymous_3 : Nativevalues.t)
+                                                   ->
+                                                    NClassicalRealizability_ShallowEmbedding.const_NClassicalRealizability_ShallowEmbedding_Fval
+                                                    x_F_0 x___U03c0__2))))
+
+let const_NClassicalRealizability_Subtyping_eqtype (x_F_4 : Nativevalues.t) (x_F'_5 : Nativevalues.t) =
+  mk_prod_accu
+  (get_name symbols_tbl 1) NClassicalRealizability_ShallowEmbedding.indaccu_NClassicalRealizability_ShallowEmbedding___U039b__1 (
+  (fun (x___U03c0__6 : Nativevalues.t)
+  ->
+   NCoq_Init_Logic.const_NCoq_Init_Logic_iff
+   (NClassicalRealizability_ShallowEmbedding.const_NClassicalRealizability_ShallowEmbedding_Fval
+    x_F_4 x___U03c0__6) (NClassicalRealizability_ShallowEmbedding.const_NClassicalRealizability_ShallowEmbedding_Fval
+                         x_F'_5 x___U03c0__6)))
+
+let const_NClassicalRealizability_Subtyping_Eqtype_extensional =
+  mk_constant_accu (get_const symbols_tbl 2)
+
+let const_NClassicalRealizability_Subtyping_realizes_iff_compat =
+  mk_constant_accu (get_const symbols_tbl 3)
+
+let const_NClassicalRealizability_Subtyping_realizes_impl_compat =
+  mk_constant_accu (get_const symbols_tbl 4)
+
+let const_NClassicalRealizability_Subtyping_Subtype_PreOrder =
+  mk_constant_accu (get_const symbols_tbl 5)
+
+let const_NClassicalRealizability_Subtyping_Eqtype_equiv =
+  mk_constant_accu (get_const symbols_tbl 6)
+
+let const_NClassicalRealizability_Subtyping_Subtype_PO =
+  mk_constant_accu (get_const symbols_tbl 7)
+
+let const_NClassicalRealizability_Subtyping_eqtype_subtype =
+  mk_constant_accu (get_const symbols_tbl 8)
+
+let const_NClassicalRealizability_Subtyping_subtype_eqtype =
+  mk_constant_accu (get_const symbols_tbl 9)
+
+let const_NClassicalRealizability_Subtyping_sub_bot =
+  mk_constant_accu (get_const symbols_tbl 10)
+
+let const_NClassicalRealizability_Subtyping_sub_top =
+  mk_constant_accu (get_const symbols_tbl 11)
+
+let const_NClassicalRealizability_Subtyping_top_bot_sub_one =
+  mk_constant_accu (get_const symbols_tbl 12)
+
+let const_NClassicalRealizability_Subtyping_sub_Impl =
+  mk_constant_accu (get_const symbols_tbl 13)
+
+let const_NClassicalRealizability_Subtyping_sub_Forall =
+  mk_constant_accu (get_const symbols_tbl 14)
+
+let const_NClassicalRealizability_Subtyping_Forall_sub_compat =
+  mk_constant_accu (get_const symbols_tbl 15)
+
+let const_NClassicalRealizability_Subtyping_sub_Forall_add =
+  mk_constant_accu (get_const symbols_tbl 16)
+
+let const_NClassicalRealizability_Subtyping_sub_Forall_cross =
+  mk_constant_accu (get_const symbols_tbl 17)
+
+let const_NClassicalRealizability_Subtyping_Forall_comm =
+  mk_constant_accu (get_const symbols_tbl 18)
+
+let const_NClassicalRealizability_Subtyping_Forall_cancel =
+  mk_constant_accu (get_const symbols_tbl 19)
+
+let const_NClassicalRealizability_Subtyping_sub_mapsto =
+  mk_constant_accu (get_const symbols_tbl 20)
+
+let const_NClassicalRealizability_Subtyping_mapsto_sub_compat =
+  mk_constant_accu (get_const symbols_tbl 21)
+
+let const_NClassicalRealizability_Subtyping_mapsto_cancel =
+  mk_constant_accu (get_const symbols_tbl 22)
+
+let const_NClassicalRealizability_Subtyping_mapsto_idempotent =
+  mk_constant_accu (get_const symbols_tbl 23)
+
+let const_NClassicalRealizability_Subtyping_mapsto_eqtype_compat =
+  mk_constant_accu (get_const symbols_tbl 24)
+
+let const_NClassicalRealizability_Subtyping_mapsto_subtype_compat =
+  mk_constant_accu (get_const symbols_tbl 25)
+
+let const_NClassicalRealizability_Subtyping_sub_inter_l =
+  mk_constant_accu (get_const symbols_tbl 26)
+
+let const_NClassicalRealizability_Subtyping_sub_inter_r =
+  mk_constant_accu (get_const symbols_tbl 27)
+
+let const_NClassicalRealizability_Subtyping_sub_inter =
+  mk_constant_accu (get_const symbols_tbl 28)
+
+let const_NClassicalRealizability_Subtyping_inter_sub_compat =
+  mk_constant_accu (get_const symbols_tbl 29)
+
+let const_NClassicalRealizability_Subtyping_inter_mapsto_distr =
+  mk_constant_accu (get_const symbols_tbl 30)
+
+let const_NClassicalRealizability_Subtyping_sub_stack =
+  mk_constant_accu (get_const symbols_tbl 31)
+
+let const_NClassicalRealizability_Subtyping_sub_term =
+  mk_constant_accu (get_const symbols_tbl 32)
+
+let const_NClassicalRealizability_Subtyping_sub_id =
+  mk_constant_accu (get_const symbols_tbl 33)
+
+let const_NClassicalRealizability_Subtyping_inter_idempotent =
+  mk_constant_accu (get_const symbols_tbl 34)
+
+let const_NClassicalRealizability_Subtyping_callcc_realizes_NNPP =
+  mk_constant_accu (get_const symbols_tbl 35)
+
+let const_NClassicalRealizability_Subtyping_inter_realizer =
+  mk_constant_accu (get_const symbols_tbl 36)
+

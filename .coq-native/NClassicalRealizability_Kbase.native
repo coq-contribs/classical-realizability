@@ -1,0 +1,10 @@
+open Nativevalues
+open Nativecode
+open Nativelib
+open Nativeconv
+open Declaremods
+let symbols_tbl =
+  get_library_symbols_tbl
+  (str_decode "8495a6be0000002000000004000000100000000ca0254b62617365a036436c6173736963616c5265616c697a6162696c69747940")
+
+(* Time spent generating this code: 0.00000s *)
