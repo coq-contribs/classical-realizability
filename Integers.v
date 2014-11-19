@@ -64,7 +64,7 @@ Global Ltac int_dstack tac Hπ :=
     | _ => tac Hπ
   end.
 
-Global Ltac Keval ::= basic_Keval ltac:(int_Keval fail).
+Global Ltac Keval ::= basic_Keval ltac:(idtac;int_Keval fail).
 Global Ltac dstack ::= basic_dstack ltac:(int_dstack ltac:(prop_dstack fail)).
 
 

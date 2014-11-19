@@ -46,7 +46,7 @@ Global Ltac pair_sum_Keval tac :=
     | _ => Debug "Keval_next"; tac
   end.
 
-Ltac Keval ::= basic_Keval ltac:(pair_sum_Keval fail).
+Ltac Keval ::= basic_Keval ltac:(idtac;pair_sum_Keval fail).
 
 Global Ltac pair_sum_dstack tac Hπ :=
   lazymatch type of Hπ with

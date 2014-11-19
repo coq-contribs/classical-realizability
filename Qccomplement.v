@@ -19,7 +19,7 @@ Qed.
 Instance Neq_sym (A : Type) : Symmetric (fun x y : A => not (eq x y)).
 Proof. intros x y Hneq Heq. apply Hneq. now symmetry. Qed.
 
-Lemma Q2Qc_correct : forall q : Q, !! q == q.
+Lemma Q2Qc_correct : forall q : Q, Q2Qc q == q.
 Proof. intros. apply Qred_correct. Qed.
 
 Ltac qc :=
@@ -34,7 +34,7 @@ Proof. intros; split; intro. now subst. now apply Qc_is_canon. Qed.
 Theorem Qred_idempotent : forall q : Qc, Qred q = q.
 Proof. intros [q Hq]. now simpl. Qed.
 *)
-Lemma Q2Qc_idempotent : forall q : Qc, !! q = q.
+Lemma Q2Qc_idempotent : forall q : Qc, Q2Qc q = q.
 Proof. intros. qc. Qed.
 
 Instance Q2Qc_wd : Proper (Qeq ==> eq) Q2Qc.
@@ -84,7 +84,7 @@ Proof. intros q₁ q₂ q₃ Hlt. rewrite Qclt_minus_iff in *. ring_simplify in 
 Lemma Qcplus_lt_reg_l : forall q₁ q₂ q₃, q₃ + q₁ < q₃ + q₂ -> q₁ < q₂.
 Proof. intros q₁ q₂ q₃ Hlt. rewrite Qclt_minus_iff in *. ring_simplify in Hlt. now ring_simplify. Qed.
 
-Lemma Qcplus_split_Qplus : forall q q' : Q, !! (q + q') = !! q + !! q'.
+Lemma Qcplus_split_Qplus : forall q q' : Q, Q2Qc (q + q') = Q2Qc q + Q2Qc q'.
 Proof. intros. unfold Qcplus. apply Qc_is_canon. now repeat rewrite Q2Qc_correct. Qed.
 
 (** **  Opposite and subtraction  **)
@@ -142,7 +142,7 @@ Proof. intros q q₂ q₃. unfold Qclt,Qcmult,Qred. repeat rewrite Q2Qc_correct.
 Lemma Qcmult_lt_r : forall q₁ q₂ q₃, 0 < q₃ -> (q₁ * q₃ < q₂ * q₃ <-> q₁ < q₂).
 Proof. intros q₁ q₂ q₃. unfold Qclt,Qcmult,Qred. repeat rewrite Q2Qc_correct. apply Qmult_lt_r. Qed.
 
-Lemma Qcmult_split_Qmult : forall q q' : Q, !! (q * q') = !! q * !! q'.
+Lemma Qcmult_split_Qmult : forall q q' : Q, Q2Qc (q * q') = Q2Qc q * Q2Qc q'.
 Proof. intros. apply Qc_is_canon. unfold Qcmult. now repeat rewrite Q2Qc_correct. Qed.
 
 Lemma Qcmult_lt_compat : forall q₁ q₂ q₃ q₄, 0 < q₁ -> 0 < q₃ -> q₁ < q₂ -> q₃ < q₄ -> q₁ * q₃ < q₂ * q₄. 
