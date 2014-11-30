@@ -56,9 +56,9 @@ Global Ltac rat_Keval tac :=
     | [ |- Cst ℚeq↓ _ ★ (Cst(Rat ?q₁)↓ _·Cst(Rat ?q₂)↓ _·?u·?v·?π) ∈ ⫫] =>
          apply anti_evaluation with ((if Qc_eq_dec q₁ q₂ then u else v) ★ π); [now apply red_ℚeq | simpl Qc_eq_dec]
     | [ |- Cst ℚle↓ _ ★ Cst(Rat ?q₁)↓ _·Cst(Rat ?q₂)↓ _·?u·?v·?π ∈ ⫫] =>
-         apply anti_evaluation with ((if Qclt_le_dec q₂ q₁ then v else u) ★ π); [now apply red_ℚle |simpl Qclt_le_dec]
+         apply anti_evaluation with ((if Qclt_le_dec q₂ q₁ then v else u) ★ π); [now apply red_ℚle |]
     | [ |- Cst ℚlt↓ _ ★ Cst(Rat ?q₁)↓ _·Cst(Rat ?q₂)↓ _·?u·?v·?π ∈ ⫫] =>
-         apply anti_evaluation with ((if Qclt_le_dec q₁ q₂ then u else v) ★ π); [now apply red_ℚlt |simpl Qclt_le_dec]
+         apply anti_evaluation with ((if Qclt_le_dec q₁ q₂ then u else v) ★ π); [now apply red_ℚlt |]
     | [ |- Cst ℚadd↓ _ ★ Cst(Rat ?q₁)↓ _·Cst(Rat ?q₂)↓ _·?k·?π ∈ ⫫] =>
          apply anti_evaluation with (k ★ Rat (q₁+q₂)↓∅·π); [now apply red_ℚadd |]
     | [ |- Cst ℚsub↓ _ ★ Cst(Rat ?q₁)↓ _·Cst(Rat ?q₂)↓ _·?k·?π ∈ ⫫] =>
