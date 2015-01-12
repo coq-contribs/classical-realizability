@@ -52,7 +52,7 @@ Global Hint Unfold Rel_ℚpos Rel_ℚnneg : Krivine.
 (** ** Tactics **)
 
 Global Ltac rat_Keval tac :=
-  lazymatch goal with
+  idtac;lazymatch goal with
     | [ |- Cst ℚeq↓ _ ★ (Cst(Rat ?q₁)↓ _·Cst(Rat ?q₂)↓ _·?u·?v·?π) ∈ ⫫] =>
          apply anti_evaluation with ((if Qc_eq_dec q₁ q₂ then u else v) ★ π); [now apply red_ℚeq | simpl Qc_eq_dec]
     | [ |- Cst ℚle↓ _ ★ Cst(Rat ?q₁)↓ _·Cst(Rat ?q₂)↓ _·?u·?v·?π ∈ ⫫] =>
