@@ -36,7 +36,7 @@ Global Instance Rel_ℚ : Relativisation ℚ := now_Rel ℚ (fun f q => [q] → 
 Global Hint Unfold Rel_ℚ : Krivine.
 
 Parameter Qq : Qc -> term.
-Hypothesis Qq_realizer : forall q e, Qq q↓e ⊩ ℚ q.
+Axiom Qq_realizer : forall q e, Qq q↓e ⊩ ℚ q.
 
 (** We do not use [∀Z, [q] → 0 < q ↦ Z) → Z] because we might not want to evaluate [q]
     but just know that it is positive.  Same comment for ℚnneg. **)
