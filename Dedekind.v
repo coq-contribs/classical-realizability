@@ -7,8 +7,8 @@ Require Import Rationals.
 
 (** The sort of rational predicates used to interpret real numbers **)
 Definition ρ := { x : Qc -> formula | forall q q' : Qc, q < q' -> x q' ⊆ x q}.
-Notation "x [ q ]" := (projS1 x q) (at level 10).
-Notation "↓ x" := (projS2 x _) (at level 10).
+Notation "x [ q ]" := (proj1_sig x q) (at level 10).
+Notation "↓ x" := (proj2_sig x _) (at level 10).
 
 (** The operator lifting any predicate into a downward-closed one **)
 Lemma F_open (x : Qc -> formula) :
