@@ -366,8 +366,38 @@ Definition invℝ_Total := λ"Tx" λ"n0x" λ"ε" λ"f" "n0x" @ λ"ε₁" λ"ε�
   (* Making the proof *)
   "Tx" @ "res" @ (λ"q" λ"X'" Qq 1 @ ℚdiv @ "q" @ "f" @ λ"f" "f" @ "res" @ "X'").
 
+(** An arithmetical conjecture about [⊩] *)
+
+Conjecture conjecture1 : forall
+  (x : Re)
+  (ε ε₁ ε0 q₁ : Qc)
+  (q' := 1 / (|q₁| - ε₁ - ε0 / 2) : Qc)
+  (bound := Qcmin (ε / (q' * q' + |q'| * ε)) (ε0 / 2) : Qc)
+  (t4 : Λ)
+  (q : Qc),
+  t4 ⊩ x bound q -> bound < |q|.
+
+(** An arithmetical conjecture *)
+
+Conjecture conjecture2 : forall
+  (ε : Qc)
+  (Hc : 0 < ε)
+  (ε₁ ε0 ε₂ q₁ : Qc)
+  (Hc0 : 0 < ε₁)
+  (Hc1 : 0 < ε0)
+  (Hc2 : 0 < ε₂)
+  (Hc3 : ε₁ + ε0 + ε₂ <= |q₁ - 0|)
+  (q' := 1 / (|q₁| - ε₁ - ε0 / 2) : Qc)
+  (bound := Qcmin (ε / (q' * q' + |q'| * ε)) (ε0 / 2) : Qc)
+  (Hq' : 0 < q')
+  (Hmin : 0 < bound)
+  (q : Qc)
+  (Hq : bound < |q|),
+   |1 / q| <= |q'|.
+
 Theorem invℝ_Total_realizer : forall e, invℝ_Total↓e ⊩ ∀x, Total x → x ≠ (embed_ℚ_ℝ 0) → Total (/ x).
 Proof.
+
 unfold Total,apartℝ. Ksolve. start.
 (* Guard condition *)
 apply (prop_guard Ht3). intros [_ ?]. subst.
@@ -410,12 +440,12 @@ start. apply Ht. find.
 (* Prove that it is a valid approximation *)
 start. apply Qq_realizer. find. start. apply ℚdiv_realizer. find. find. Ksolve. find.
 assert (Hq : bound < |q|).
-  admit. (* TODO *)
+  eapply conjecture1; eassumption.
 unfold invℝ. Ksolve.
 - unfold Qcdiv. rewrite Qcmult_1_l. rewrite Qcabs_inv. rewrite Qcinv_involutive. ok.
 - clear_realizers.
   assert (Hqq' : |1 / q| <= |q'|).
-    admit. (* TODO *)
+    eapply conjecture2 with (ε:=ε) (ε₂:=ε₂); eassumption.
   etransitivity. apply Qc.le_min_l.
   assert (0 < q' * q' + |q'| * ε).
     change 0 with (0 + 0). apply Qcplus_lt_compat. apply Qcsquare_pos. symmetry. apply Qclt_not_eq; ok.
