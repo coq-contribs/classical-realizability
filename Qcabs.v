@@ -1,8 +1,8 @@
 (** Rewriting of the Qabs library for the [Qc] type **)
 
 Require Import Qreduction.
-Require Export Qccomplement.
 Require Qabs.
+Require Export ClassicalRealizability.Qccomplement.
 
 Hint Unfold Qcle Qcplus Qcminus Qcmult Qcdiv Qclt : qarith.
 

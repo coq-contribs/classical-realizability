@@ -1,8 +1,9 @@
 Require Import Arith.
 Require Import Omega.
-Require Import Kbase.
-Require Import Integers.
-Require Import KBool.
+Require Import ClassicalRealizability.Kbase.
+Require Import ClassicalRealizability.Integers.
+Require Import ClassicalRealizability.KBool.
+
 
 Ltac Keval := basic_Keval ltac:(idtac; int_Keval fail).
 

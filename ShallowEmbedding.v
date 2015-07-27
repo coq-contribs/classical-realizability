@@ -29,12 +29,6 @@ Ltac easy ::=
   (use_hyps; do_ccl) || fail "Cannot solve this goal".
 
 
-Ltac exist2 t₁ t₂ := exists t₁; exists t₂. (* cannot use exists2 as it is already used… *)
-Ltac exists3 t₁ t₂ t₃ := exists t₁; exists t₂; exists t₃.
-Ltac exists4 t₁ t₂ t₃ t₄ := exists t₁; exists t₂; exists t₃; exists t₄.
-Ltac exists5 t₁ t₂ t₃ t₄ t₅ := exists t₁; exists t₂; exists t₃; exists t₄; exists t₅.
-
-
 (***************************)
 (** *  Krivine's machine  **)
 (***************************)

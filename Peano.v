@@ -1,6 +1,6 @@
 (** Realization of Peano arithmetic **)
 Require Import Arith_base.
-Require Import Kbase.
+Require Import ClassicalRealizability.Kbase.
 
 
 Definition Leibniz {T : Type} (a b : T) := ∀Z, Z a → Z b.

@@ -1,6 +1,11 @@
-Require Import QArith_base Qcanon Orders QcOrderedType GenericMinMax.
+Require Import QArith_base.
+Require Import Qcanon.
+Require Import Orders.
+Require Import GenericMinMax.
+Require Import ClassicalRealizability.QcOrderedType.
 
 Local Open Scope Qc_scope.
+
 
 Definition Qcmax := gmax Qccompare.
 Definition Qcmin := gmin Qccompare.

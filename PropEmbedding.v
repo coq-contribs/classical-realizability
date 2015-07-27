@@ -1,8 +1,7 @@
-Require Import Tactics.
-Require Import BasicResults.
-Require Import Subtyping.
-Require Import LogicalEquivalences.
 Require Import Morphisms.
+Require Import ClassicalRealizability.Tactics.
+Require Import ClassicalRealizability.BasicResults.
+Require Import ClassicalRealizability.Subtyping.
 
 
 (***********************************)
@@ -43,12 +42,12 @@ Qed.
 Lemma Beckman_eqtype : forall A : nat -> Prop, prop (forall n, A n) ≈ (∀n, prop (A n)).
 Proof.
 intro A. intros s; split; intro Hs; dec s.
-  exists 0. left. split. now apply HF. ok.
-  apply not_all_ex_not_proof in HF. destruct HF as [n Hn]. exists n. right. repeat split; ok.
-  elim (Classical_Prop.classic (forall n, A n)); intro HA.
-    left. now split.
-    right. unfold one in Hs. dec s. repeat split; ok.
-  right. split. intro Habs. elim HF. now apply Habs. split; ok.
++ exists 0. left. split. now apply HF. ok.
++ apply Classical_Pred_Type.not_all_ex_not in HF. destruct HF as [n Hn]. exists n. right. repeat split; ok.
++ elim (Classical_Prop.classic (forall n, A n)); intro HA.
+  - left. now split.
+  - right. unfold one in Hs. dec s. repeat split; ok.
++ right. split. intro Habs. elim HF. now apply Habs. split; ok.
 Qed.
 
 Lemma stack_prop_iff : forall c t π, t·π ∈ ‖prop c‖ <-> c /\ t★π ∈ ⫫ \/ ~c.

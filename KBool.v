@@ -1,6 +1,6 @@
 Require Import Setoid.
 Require Import Arith.Peano_dec.
-Require Import Kbase.
+Require Import ClassicalRealizability.Kbase.
 
 
 Definition 𝔹 b := ∀Z, Z 0 → Z 1 → Z b.

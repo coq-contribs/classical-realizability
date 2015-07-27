@@ -1,9 +1,12 @@
 Require Import ZArith.
 Require Import Classical.
-Require Import Kbase.
-Require Import Integers.
+Require Import ClassicalRealizability.Kbase.
+Require Import ClassicalRealizability.Integers.
 
+
+(*********************************)
 (** *  The instruction [quote]  **)
+(*********************************)
 
 Parameter quote : instruction.
 Parameter quote' : instruction.

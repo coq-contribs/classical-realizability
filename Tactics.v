@@ -1,4 +1,4 @@
-Require Export ShallowEmbedding.
+Require Export ClassicalRealizability.ShallowEmbedding.
 
 
 (********************************)
@@ -120,7 +120,7 @@ Ltac basic_dstack tac Hπ :=
   end.
 
 (** **  User tactics using the above fragments **)
-    
+
 (** They are meant to be redefined when extending the reduction rules / realizability connectives. **)
 Ltac Keval := basic_Keval fail.
 Ltac dstack := basic_dstack fail.

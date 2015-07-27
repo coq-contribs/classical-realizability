@@ -1,7 +1,8 @@
 Require Import QArith.
 Require Import Psatz.
-Require Import Kbase.
-Require Import Rationals.
+Require Import ClassicalRealizability.Kbase.
+Require Import ClassicalRealizability.Rationals.
+
 
 (** **  Definition of real numbers through Dedekind cuts  **)
 
