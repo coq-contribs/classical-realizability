@@ -1,9 +1,9 @@
 Require Import QArith.
 Require Import Psatz.
-Require Import Kbase.
-Require Import Rationals.
-Require Import Real_definitions.
-Require Import Real_relations.
+Require Import ClassicalRealizability.Kbase.
+Require Import ClassicalRealizability.Rationals.
+Require Import ClassicalRealizability.Real_definitions.
+Require Import ClassicalRealizability.Real_relations.
 
 
 (*********************************)
@@ -42,7 +42,7 @@ Theorem addℝ_proper_realizer : forall e, addℝ_proper↓e ⊩ ∀x₁ x₂ y�
 Proof.
 do 2 Ksolve. startn 7.
 (* Guard conditions *)
-eapply prop_guard. Kmove. exist2 ε₁0 ε₁1. Ksolve; now apply Qclt_le_weak. intro Hle₁.
+eapply prop_guard. Kmove. exists ε₁0, ε₁1. Ksolve; now apply Qclt_le_weak. intro Hle₁.
 Kmove. repeat eexists; try eok || now apply Qclt_le_weak. apply (prop_subst_stack Hπ).
 (* Arithmetical proof *)
 clear_realizers. subst. intro Hle₂.
@@ -63,7 +63,7 @@ Theorem addℝ_Rle_compat_realizer :
 Proof.
 do 2 Ksolve. startn 7.
 (* Guard conditions *)
-eapply prop_guard. Kmove. exist2 ε₁0 ε₁1. Ksolve; now apply Qclt_le_weak. intro Hle₁.
+eapply prop_guard. Kmove. exists ε₁0, ε₁1. Ksolve; now apply Qclt_le_weak. intro Hle₁.
 Kmove. repeat eexists; try eok || now apply Qclt_le_weak. apply (prop_subst_stack Hπ).
 (* Arithmetical proof *)
 clear_realizers. revert Hle₁. subst. Qcunfold. lra.
@@ -81,7 +81,7 @@ unfold addℝ. Kmove. exists Z. split; [| ok]. Ksolve. Kmove. exists (ε₁ + ε
   rewrite <- Qcplus_0_l at 1. now apply Qcplus_lt_compat.
   subst. ring.
   subst. ring.
-  Kmove. exist2 ε₁ ε₁0. find.
+  Kmove. exists ε₁, ε₁0. find.
 Qed.
 
 Definition addℝ_assoc := λ"Cx" λ"Cy" λ"Cz" λ"ε₁" λ"ε₂" λ"q₁" λ"q₂" λ"X+(Y+Z)" λ"(X+Y)+Z"
@@ -93,8 +93,8 @@ Theorem addℝ_assoc_realizer :
 Proof.
 intro e. startn 17. apply addℝ_Cauchy_realizer. do 2 eexists.
 repeat split. startn 2. apply addℝ_Cauchy_realizer. find. eok.
-exist2 ε₁ ε₂. find.
-startn 1. apply addℝ_shift_realizer. exists5 x y z ε₁ q₁. split; assumption.
+exists ε₁, ε₂. find.
+startn 1. apply addℝ_shift_realizer. exists x, y, z, ε₁, q₁. split; assumption.
 Qed.
 
 Definition addℝ_0_l := λ"Cx" λ"ε₁" λ"ε₂" λ"q₁" λ"q₂" λ"X+0" λ"X"
@@ -116,7 +116,7 @@ Definition addℝ_switch := λ"XY" "XY" @ λ"ε₁" λ"ε₂" λ"q₁" λ"q₂" 
   λ"f" "f" @ "ε₂" @ "ε₁" @ "q₂" @ "q₁" @ "Y" @ "X".
 
 Lemma addℝ_switch_realizer : forall e, addℝ_switch↓e ⊩ ∀x y ε q, (x + y)%Re ε q → (y + x)%Re ε q.
-Proof. unfold addℝ at 1. Ksolve. unfold addℝ. Kmove. exist2 ε₂ ε₁. find; now rewrite Qcplus_comm. Qed.
+Proof. unfold addℝ at 1. Ksolve. unfold addℝ. Kmove. exists ε₂, ε₁. find; now rewrite Qcplus_comm. Qed.
 
 Definition addℝ_Eeq_comm := λ"ε" λ"q" λ"f" "f" @ addℝ_switch @ addℝ_switch.
 
@@ -128,8 +128,8 @@ Definition addℝ_Req_comm := λ"Cx" λ"Cy" λ"ε₁" λ"ε₂" λ"q₁" λ"q₂
 
 Theorem addℝ_Req_comm_realizer : forall e, addℝ_Req_comm↓e ⊩ ∀x y, Cauchy x → Cauchy y → (x + y ≡ y + x)%Re.
 Proof.
-intro e. startn 16. apply addℝ_Cauchy_realizer. exist2 x y. repeat split; try ok.
-exists4 ε₁ ε₂ q₁ q₂. find. startn 1. apply addℝ_switch_realizer. find.
+intro e. startn 16. apply addℝ_Cauchy_realizer. exists x, y. repeat split; try ok.
+exists ε₁, ε₂, q₁, q₂. find. startn 1. apply addℝ_switch_realizer. find.
 Qed.
 
 Definition addℝ_resp_Rlt := λ"Tz" λ"Lt" "Lt" @ λ"ε₁" λ"ε" λ"ε₂" λ"q₁" λ"q₂" λ"X" λ"Y"
@@ -145,13 +145,13 @@ intro. unfold Rlt at 1. Opaque Rlt. Ksolve.
 Ksolve. apply Qq_realizer. find. start. apply ℚdiv_realizer. find. find.
 assert (0 < ε/3) by now apply third_pos.
 start. apply Ht. find. Transparent Rlt.
-Kmove. exists3 (ε₁ + ε / 3) (ε / 3) (ε₂ + ε / 3). find.
+Kmove. exists (ε₁ + ε / 3), (ε / 3), (ε₂ + ε / 3). find.
   change 0 with (0 + 0). apply Qcplus_lt_compat; ok.
   change 0 with (0 + 0). apply Qcplus_lt_compat; ok.
   replace (q₁ + q + (ε₁ + ε / 3) + ε / 3 + (ε₂ + ε / 3)) with (q₁ + ε₁ + ε + ε₂ + q) by (Qcunfold; qc; field).
     now apply Qcplus_le_compat.
-  unfold addℝ. Kmove. exist2 ε₁ (ε / 3%Z). find.
-  unfold addℝ. Kmove. exist2 ε₂ (ε / 3%Z). find.
+  unfold addℝ. Kmove. exists ε₁, (ε / 3%Z). find.
+  unfold addℝ. Kmove. exists ε₂, (ε / 3%Z). find.
 Qed.
 
 (** ***  Opposite **)
@@ -210,7 +210,7 @@ apply (prop_guard Ht1). intros [_ ?]. subst.
 (* Decompose q₀ ∈ x+(-x)[ε₀] *)
 apply Ht0. eexists; split; [| eok].
 (* using Cauchy property of x *)
-Kmove. exist2 ε₁0 ε₂0. Ksolve; try now apply Qclt_le_weak. subst. apply (prop_subst_stack Hπ).
+Kmove. exists ε₁0, ε₂0. Ksolve; try now apply Qclt_le_weak. subst. apply (prop_subst_stack Hπ).
 (* Arithmetical proof *)
 clear_realizers. intro Hle. rewrite <- Qcplus_0_r at 1. apply Qcplus_le_compat.
   now replace (q₁0 + q₂ - 0) with (q₁0 - - q₂) by ring.
@@ -232,8 +232,8 @@ Proof.
 do 2 Ksolve. startn 7.
 (* Guard conditions *)
 (* Using the equality premises as guard conditions *)
-eapply prop_guard. Kmove. exist2 ε₁0 ε₁1. Ksolve; now apply Qclt_le_weak. intro Hlex.
-Kmove. exists4 ε₂0 ε₂1 q₂0 q₂1; find; (now apply Qclt_le_weak) || apply (prop_subst_stack Hπ).
+eapply prop_guard. Kmove. exists ε₁0, ε₁1. Ksolve; now apply Qclt_le_weak. intro Hlex.
+Kmove. exists ε₂0, ε₂1, q₂0, q₂1; find; (now apply Qclt_le_weak) || apply (prop_subst_stack Hπ).
 (* Arithmetical proof *)
 clear_realizers. subst. intro Hley.
 destruct (Qclt_le_dec ε₁0 ε₁1); destruct (Qclt_le_dec ε₂0 ε₂1).
@@ -325,7 +325,7 @@ Definition mulℝ_switch := addℝ_switch.
 Lemma mulℝ_switch_realizer : forall e, mulℝ_switch↓e ⊩ ∀x y ε q, (x * y)%Re ε q → (y * x)%Re ε q.
 Proof.
 unfold mulℝ at 1. Ksolve. unfold mulℝ. Kmove.
-exist2 ε₂ ε₁; find; now rewrite Qcplus_comm || rewrite Qcmult_comm.
+exists ε₂, ε₁; find; now rewrite Qcplus_comm || rewrite Qcmult_comm.
 Qed.
 
 Definition mulℝ_Eeq_comm := λ"ε" λ"q" λ"f" "f" @ mulℝ_switch @ mulℝ_switch.
@@ -338,8 +338,8 @@ Definition mulℝ_Req_comm := λ"Cx" λ"Cy" λ"ε₁" λ"ε₂" λ"q₁" λ"q₂
 
 Theorem mulℝ_Req_comm_realizer : forall e, mulℝ_Req_comm↓e ⊩ ∀x y, Cauchy x → Cauchy y → (x * y ≡ y * x)%Re.
 Proof.
-intro e. startn 16. apply mulℝ_Cauchy_realizer. exist2 x y. repeat split; try ok.
-exists4 ε₁ ε₂ q₁ q₂. repeat (split; trivial). find.
+intro e. startn 16. apply mulℝ_Cauchy_realizer. exists x, y. repeat split; try ok.
+exists ε₁, ε₂, q₁, q₂. repeat (split; trivial). find.
 startn 1. apply mulℝ_switch_realizer. find.
 Qed.
 
@@ -353,7 +353,7 @@ Theorem distr_realizer :
 
 (** ***  Inverse  **)
 
-Definition invℝ_Total := λ"Tx" λ"n0x" λ"ε" λ"f" "n0x" @ λ"ε₁" λ"ε₀" λ"ε₂" λ"q₁" λ"q₂" λ"X" λ"0"
+Definition invℝ_Total := λ"Tx" λ"Cx" λ"n0x" λ"ε" λ"f" "n0x" @ λ"ε₁" λ"ε₀" λ"ε₂" λ"q₁" λ"q₂" λ"X" λ"0"
   (* Guard condition *)
   "0" @ 
   (* Shared computation *)
@@ -366,11 +366,25 @@ Definition invℝ_Total := λ"Tx" λ"n0x" λ"ε" λ"f" "n0x" @ λ"ε₁" λ"ε�
   (* Making the proof *)
   "Tx" @ "res" @ (λ"q" λ"X'" Qq 1 @ ℚdiv @ "q" @ "f" @ λ"f" "f" @ "res" @ "X'").
 
-Theorem invℝ_Total_realizer : forall e, invℝ_Total↓e ⊩ ∀x, Total x → x ≠ (embed_ℚ_ℝ 0) → Total (/ x).
+Conjecture conjecture1 : forall (x : Re) (ε ε₁ ε0 ε₂ q₁ q : Qc),
+  0 < ε -> 0 < ε₁ -> 0 < ε0 -> 0 < ε₂ -> ε₁ + ε0 + ε₂ <= |q₁| ->
+  forall (q' := 1 / (|q₁| - ε₁ - ε0 / 2)) (bound := Qcmin (ε / (q' * q' + |q'| * ε)) (ε0 / 2)),
+  0 < q' -> 0 < bound ->
+  forall t t0 t1 t3 t5 : Λ,
+    t ⊩ (∀₁ ε∈ℚ+*, ∃₁ q ∈ ℚ, x ε q) -> t0 ⊩ Cauchy x -> t3 ⊩ x ε₁ q₁ -> t5 ⊩ x bound q -> t1 ⊩ x ≠ (embed_ℚ_ℝ 0)
+  -> bound < |q|.
+
+Conjecture conjecture2 : forall ε ε₁ ε0 ε₂ q₁ q : Qc,
+  0 < ε -> 0 < ε₁ -> 0 < ε0 -> 0 < ε₂ -> ε₁ + ε0 + ε₂ <= |q₁| ->
+  forall (q' := 1 / (|q₁| - ε₁ - ε0 / 2))
+         (bound := Qcmin (ε / (q' * q' + |q'| * ε)) (ε0 / 2)),
+  0 < q' -> 0 < bound -> bound < |q| -> |1 / q| <= |q'|.
+
+Theorem invℝ_Total_realizer : forall e, invℝ_Total↓e ⊩ ∀x, Total x → Cauchy x → x ≠ (embed_ℚ_ℝ 0) → Total (/ x).
 Proof.
-unfold Total,apartℝ. Ksolve. start.
+unfold Total, apartℝ. Ksolve. start.
 (* Guard condition *)
-apply (prop_guard Ht3). intros [_ ?]. subst.
+apply (prop_guard Ht4). intros [_ ?]. subst.
 (* Shared computation *)
 apply Qq_realizer. find. start. apply ℚdiv_realizer. find. find.
 (* Give the bound for the precision *)
@@ -378,25 +392,23 @@ pose (q' := 1 / (Qcabs q₁ - ε₁ - ε0 / 2)).
 pose (bound := Qcmin (ε / (q' * q' + Qcabs q' * ε)) (ε0 / 2)).
 (* Prove that the bound is positive *)
 assert (Hq' : 0 < q').
-  unfold q'. replace (q₁ - 0) with q₁ in Hc3 by ring. apply Qclt_shift_div_l.
-    replace ((|q₁|) - ε₁ - ε0 / 2) with ((|q₁|) + - (ε₁ + ε0 / 2)) by ring.
-    rewrite <- Qclt_minus_iff. apply Qclt_le_trans with (ε₁ + ε0 + ε₂).
-      rewrite Qclt_minus_iff. replace (ε₁ + ε0 + ε₂ + - (ε₁ + ε0 / 2)) with (ε0 - ε0 / 2 + ε₂) by ring.
-      rewrite <- Qcplus_0_l at 1. apply Qcplus_lt_compat.
-        unfold Qcminus. rewrite <- Qclt_minus_iff. apply Qclt_shift_div_r. now compute.
-        simpl. replace (ε0 * 2%Z) with (ε0 + ε0). rewrite Qclt_minus_iff. ring_simplify. assumption.
-        rewrite Qcmult_comm. Qcunfold. simpl. ring.
-        assumption.
-      assumption.
-    rewrite Qcmult_0_l. now compute.
+{ unfold q'. replace (q₁ - 0) with q₁ in Hc3 by ring. apply Qclt_shift_div_l.
+  + replace ((|q₁|) - ε₁ - ε0 / 2) with ((|q₁|) + - (ε₁ + ε0 / 2)) by ring.
+    rewrite <- Qclt_minus_iff. apply Qclt_le_trans with (ε₁ + ε0 + ε₂); trivial.
+    rewrite Qclt_minus_iff. replace (ε₁ + ε0 + ε₂ + - (ε₁ + ε0 / 2)) with (ε0 - ε0 / 2 + ε₂) by ring.
+    rewrite <- Qcplus_0_l at 1. apply Qcplus_lt_compat; trivial.
+    unfold Qcminus. rewrite <- Qclt_minus_iff. apply Qclt_shift_div_r. now compute.
+    simpl. replace (ε0 * 2%Z) with (ε0 + ε0). rewrite Qclt_minus_iff. ring_simplify. assumption.
+    rewrite Qcmult_comm. Qcunfold. simpl. ring.
+  + rewrite Qcmult_0_l. now compute. }
 assert (Hmin : 0 < bound).
-  apply Qc.min_glb_lt.
-    apply Qclt_shift_div_l.
-      replace 0 with (0 * q' + q' * 0) by ring. apply Qcplus_lt_compat.
-        apply Qcmult_lt_compat_r; assumption.
-        rewrite Qcabs_pos. apply Qcmult_lt_compat_l; assumption. apply Qclt_le_weak; assumption.
-      rewrite Qcmult_0_l. assumption.
-    apply half_pos; ok.
+{ apply Qc.min_glb_lt.
+  * apply Qclt_shift_div_l.
+    + replace 0 with (0 * q' + q' * 0) by ring. apply Qcplus_lt_compat.
+      - apply Qcmult_lt_compat_r; assumption.
+      - rewrite Qcabs_pos. apply Qcmult_lt_compat_l; assumption. apply Qclt_le_weak; assumption.
+    + rewrite Qcmult_0_l. assumption.
+  * apply half_pos; ok. }
 (* Prove that the bound is a rational number *)
 start. apply absℚ_realizer. find. start. apply ℚsub_realizer. find.
   find. start. apply ℚsub_realizer. find. find.
@@ -410,33 +422,31 @@ start. apply Ht. find.
 (* Prove that it is a valid approximation *)
 start. apply Qq_realizer. find. start. apply ℚdiv_realizer. find. find. Ksolve. find.
 assert (Hq : bound < |q|).
-  admit. (* TODO *)
+{ replace (q₁ - 0) with q₁ in Hc3 by ring. eapply (conjecture1 x ε ε₁ ε0 ε₂ q₁ q); eassumption. }
 unfold invℝ. Ksolve.
-- unfold Qcdiv. rewrite Qcmult_1_l. rewrite Qcabs_inv. rewrite Qcinv_involutive. ok.
-- clear_realizers.
+* unfold Qcdiv. rewrite Qcmult_1_l. rewrite Qcabs_inv. rewrite Qcinv_involutive. ok.
+* clear_realizers.
   assert (Hqq' : |1 / q| <= |q'|).
-    admit. (* TODO *)
+  { assert (Heq : q₁ - 0 = q₁) by ring. rewrite Heq in *. apply (conjecture2 ε ε₁ ε0 ε₂ q₁ q); assumption. }
   etransitivity. apply Qc.le_min_l.
   assert (0 < q' * q' + |q'| * ε).
-    change 0 with (0 + 0). apply Qcplus_lt_compat. apply Qcsquare_pos. symmetry. apply Qclt_not_eq; ok.
-    replace 0 with (0 * ε) by ring. apply Qcmult_lt_compat_r. ok. rewrite Qcabs_pos. ok. apply Qclt_le_weak; ok.
+  { change 0 with (0 + 0). apply Qcplus_lt_compat. apply Qcsquare_pos. symmetry. apply Qclt_not_eq; ok.
+    replace 0 with (0 * ε) by ring. apply Qcmult_lt_compat_r. ok. rewrite Qcabs_pos. ok. apply Qclt_le_weak; ok. }
   apply Qcmult_le_compat.
-    apply Qclt_le_weak; ok.
-    rewrite Qcinv_nonneg. apply Qclt_le_weak. ok.
-    reflexivity.
-    apply Qcinv_pos_le_compat.
-      assert (0 < |1 / q|).
-        unfold Qcdiv. rewrite Qcmult_1_l. rewrite Qcabs_inv. rewrite Qcinv_pos. transitivity bound; ok.
+  + apply Qclt_le_weak; ok.
+  + rewrite Qcinv_nonneg. apply Qclt_le_weak. ok.
+  + reflexivity.
+  + apply Qcinv_pos_le_compat.
+    - assert (0 < |1 / q|).
+      { unfold Qcdiv. rewrite Qcmult_1_l. rewrite Qcabs_inv. rewrite Qcinv_pos. transitivity bound; ok. }
       change 0 with (0 + 0). apply Qcplus_lt_compat.
         rewrite <- Qcabs_pos.
           rewrite Qcabs_mult. apply Qcsquare_pos. symmetry. apply Qclt_not_eq. ok.
           now apply Qcsquare_nonneg.
         replace 0 with (0 * ε) by ring. apply Qcmult_lt_compat_r; ok.
-      apply Qcplus_le_compat.
-        setoid_rewrite <- Qcabs_pos at 1 2.
-          do 2 rewrite Qcabs_mult. apply Qcmult_le_compat; apply Qcabs_nonneg || ok.
-          apply Qcsquare_nonneg.
-          apply Qcsquare_nonneg.
+    - apply Qcplus_le_compat.
+        setoid_rewrite <- Qcabs_pos at 1 2; try now apply Qcsquare_nonneg.
+        do 2 rewrite Qcabs_mult. apply Qcmult_le_compat; apply Qcabs_nonneg || ok.
         apply Qcmult_le_compat_r. ok. apply Qclt_le_weak. ok.
-- unfold Qcdiv. rewrite Qcmult_1_l. rewrite Qcinv_involutive. ok.
+* unfold Qcdiv. rewrite Qcmult_1_l. rewrite Qcinv_involutive. ok.
 Qed.

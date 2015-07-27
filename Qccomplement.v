@@ -5,16 +5,11 @@ Require Import Qreduction.
 Require Export Qcanon.
 
 Hint Unfold Qcle Qcplus Qcminus Qcmult Qcdiv Qclt : qarith.
-(*
-Lemma Qinv_not_0 : forall a, ~a == 0 -> ~/a == 0.
-Proof. 
-intros [[| |] d] Ha Habs.
-  compute in Habs. elim Ha. reflexivity.
-  unfold Qinv in Habs. change ('d # p == 0) in Habs. unfold Qeq in *. simpl in *. now inversion Habs.
-  unfold Qinv in Habs. change (Zneg d # p == 0) in Habs. unfold Qeq in *. simpl in *. now inversion Habs.
-Qed.
-*)
+
+
+(*******************)
 (** *  Relations  **)
+(*******************)
 
 Instance Neq_sym (A : Type) : Symmetric (fun x y : A => not (eq x y)).
 Proof. intros x y Hneq Heq. apply Hneq. now symmetry. Qed.
@@ -53,10 +48,10 @@ Qed.
 Instance Qclt_irrefl : Irreflexive Qclt.
 Proof. intro. apply Qcle_not_lt. reflexivity. Qed.
 
-Lemma Qclt_le_dec : forall q q', {q < q'} + {q' <= q}.
-Proof. unfold Qcle,Qclt. intros [q ?] [q' ?]. apply Qlt_le_dec. Qed.
 
+(*********************************)
 (** *  Arithmetical operations  **)
+(*********************************)
 
 (** **  Addition  **)
 
@@ -202,15 +197,6 @@ apply Qcopp_le_compat; replace (- 0) with 0 in * by ring.
 now rewrite <- Qcinv_nonneg,Qcinv_opp_comm. now rewrite <- Qcinv_opp_comm,Qcinv_nonneg. 
 Qed.
 
-(*
-Lemma Qcinv_le_compat : forall q q', q <= q' -> /q' <= /q.
-Proof.
-intros [[q₁ q₂] ?] [[q₁' q₂'] ?] Hle. unfold Qcle,Qcinv. do 2 rewrite Q2Qc_correct. simpl.
-
- apply Qcmult_lt_0_le_reg_r with (q * q').
-Qed.
-*)
-
 Lemma Qclt_shift_div_l : forall q q' q'', 0 < q'' -> (q < q' / q'' <-> q * q'' < q').
 Proof.
 intros q q' q'' Hq''. unfold Qclt,Qcdiv,Qcmult,Qcinv in *. repeat rewrite Q2Qc_correct in *.
@@ -269,7 +255,10 @@ intros q Hq. rewrite <- (Qcmult_1_l (/ q)). setoid_rewrite <- (Qcmult_1_l q) at 
 change (1 * / q) with (1 / q). now apply Qcle_shift_div_l.
 Qed.
 
-(** * Stuff for Reals  **)
+
+(*************************)
+(** *  Stuff for Reals  **)
+(*************************)
 
 Lemma Qred_1_r : forall n, Qred (n#1) = n#1.
 Proof.

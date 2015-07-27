@@ -1,4 +1,4 @@
-Require Import Tactics.
+Require Import ClassicalRealizability.Tactics.
 
 
 (*************************************)

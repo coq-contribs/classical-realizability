@@ -1,8 +1,8 @@
-Require Import Kbase.
-Require Import Rationals.
-Require Import Real_definitions.
-Require Import Real_relations.
-Require Import Real_operations.
+Require Import ClassicalRealizability.Kbase.
+Require Import ClassicalRealizability.Rationals.
+Require Import ClassicalRealizability.Real_definitions.
+Require Import ClassicalRealizability.Real_relations.
+Require Import ClassicalRealizability.Real_operations.
 
 
 Definition non_trivial := λ"f" Qq 1 @ (Qq 0 @ (Qq (1/3) @ λ"1/3" "f" @ "1/3" @ "1/3" @ "1/3")) @ Id @ Id.
@@ -31,7 +31,7 @@ start. apply Qq_realizer. find. start. apply ℚadd_realizer. find. find. Ksolve
 (* Guard condition *)
 start. apply (prop_guard Ht4). intros [_ ?]. subst.
 (* Using Cauchy property of x *)
-apply Qq_realizer. find. Kmove. exist2 ε₁ 1. find. now compute. find.
+apply Qq_realizer. find. Kmove. exists ε₁, 1. find. now compute. find.
 apply (prop_subst_stack Hπ).
 (* Arithmetical proof *)
 clear -Hc0. rewrite Qcabs_minus, Qcabs_diff_le_condition. intros [_ ?]. rewrite <- Qcplus_0_r at 1.

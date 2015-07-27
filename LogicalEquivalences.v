@@ -1,6 +1,7 @@
-Require Import Tactics.
-Require Import BasicResults.
-Require Import Subtyping.
+Require Import ClassicalRealizability.Tactics.
+Require Import ClassicalRealizability.BasicResults.
+Require Import ClassicalRealizability.Subtyping.
+
 
 (******************************)
 (** *  Logical equivalences  **)

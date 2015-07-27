@@ -1,4 +1,8 @@
-Require Import QArith_base Qcanon Equalities Orders OrdersTac.
+Require Import QArith_base.
+Require Import Qcanon.
+Require Import Equalities.
+Require Import Orders.
+Require Import OrdersTac.
 
 Local Open Scope Qc_scope.
 

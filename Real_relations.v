@@ -1,8 +1,9 @@
 Require Import QArith.
 Require Import Psatz.
-Require Import Kbase.
-Require Import Rationals. (* Order matters for Scopes *)
-Require Import Real_definitions.
+Require Import ClassicalRealizability.Kbase.
+Require Import ClassicalRealizability.Rationals. (* Order matters for Scopes *)
+Require Import ClassicalRealizability.Real_definitions.
+
 
 Close Scope Re_scope.
 
@@ -59,7 +60,7 @@ Definition Req_sym := λ"Eqxy" λ"ε₁" λ"ε₂" λ"q₁" λ"q₂" λ"X" λ"Y"
   "Eqxy" @ "ε₂" @ "ε₁" @ "q₂" @ "q₁" @ "Y" @ "X".
 
 Lemma Req_sym_realizer : forall e, Req_sym↓e ⊩ ∀x y, (x ≡ y → y ≡ x)%Re.
-Proof. intro. start. rewrite Qcabs_minus,Qcplus_comm in Hπ. Kmove. exist2 ε₂ ε₁. Ksolve. Qed.
+Proof. intro. start. rewrite Qcabs_minus,Qcplus_comm in Hπ. Kmove. exists ε₂, ε₁. Ksolve. Qed.
 
 (** Transitivity **)
 Definition Req_trans := λ"Ty" λ"Eqxy" λ"Eqyz" λ"ε₁" λ"ε₂" λ"q₁" λ"q₂" λ"X" λ"Z"
@@ -77,7 +78,7 @@ assert (0 < ε / 2)%Qc by now apply half_pos.
 assert (0 <= ε / 2)%Qc by now apply Qclt_le_weak.
 apply Ht. find.
 startn 3. eapply prop_guard. start. apply Ht0. exists ε₁. find.
-intro Habs. Kevals. apply Ht1. exist2 (ε / 2) ε₂. find.
+intro Habs. Kevals. apply Ht1. exists (ε / 2), ε₂. find.
 apply (prop_subst_stack Hπ).
 (* Arithmetical proof *)
 clear_realizers. intro Ha.
@@ -129,7 +130,7 @@ start. apply Qq_realizer. find. start. apply ℚdiv_realizer. find.
 find. start. apply Ht. exists (ε/2). Kmove. now apply half_pos. find.
 find. startn 3. eapply prop_guard. Kmove. apply Qq_realizer.
   find. start. apply ℚdiv_realizer. find.
-  find. Kmove. exist2 ε₁ (ε / 2). find. now apply Qclt_le_weak, half_pos. find.
+  find. Kmove. exists ε₁, (ε / 2). find. now apply Qclt_le_weak, half_pos. find.
 intro Habs. Kmove. apply Qq_realizer. find. start. apply ℚdiv_realizer. find.
 find. Kmove. exists (ε / 2). find. now apply Qclt_le_weak, half_pos. Ksolve.
 apply (prop_subst_stack Hπ).
@@ -149,7 +150,7 @@ Definition Rle_antisym := λ"Lexy" λ"Leyx" λ"ε₁" λ"ε₂" λ"q₁" λ"q₂
 Theorem Rle_antisym_realizer : forall e, Rle_antisym↓e ⊩ ∀ x y, (x <= y → y <= x → x ≡ y)%Re.
 Proof.
 intro e. startn 9. eapply prop_guard. Kmove. exists ε₁. find. intro Hle₁.
-Kmove. exist2 ε₂ ε₁. find. apply (prop_subst_stack Hπ).
+Kmove. exists ε₂, ε₁. find. apply (prop_subst_stack Hπ).
 (* Arithmetical proof *)
 clear_realizers. intro Hle₂. rewrite Qcabs_diff_le_condition. revert Hle₁ Hle₂. Qcunfold. lra.
 Qed.
@@ -160,9 +161,9 @@ Definition Rle_proper :=
 Theorem Rle_proper_realizer : forall e,
   Rle_proper↓e ⊩ ∀x₁ x₂ y₁ y₂, Total x₁ → Total y₁ → (x₁ ≡ x₂ → y₁ ≡ y₂ → x₁ <= y₁ → x₂ <= y₂)%Re.
 Proof.
-Kmove. apply Rle_trans_realizer. exists3 x₂ y₁ y₂. repeat split.
+Kmove. apply Rle_trans_realizer. exists x₂, y₁, y₂. repeat split.
   ok.
-  start. apply Rle_trans_realizer. exists3 x₂ x₁ y₁. findn 1.
+  start. apply Rle_trans_realizer. exists x₂, x₁, y₁. findn 1.
   eapply sub_term; [| subtyping]. intros π' Hπ'. Kevals. apply Req_sym_realizer. do 2 eexists. split. eapply Ht1. eok.
   exists ε₁0. find.
   now eapply sub_term; [| subtyping].
@@ -196,7 +197,7 @@ Proof.
 intro e. Kmove. exists Z; split; [| ok].
 Kmove. exists Z; split; [| ok]. startn 14.
 eapply prop_guard. now Ksolve; apply Qclt_le_weak. intro Hle.
-Kmove. exist2 ε₁ (ε + ε0). find. rewrite <- Qcplus_0_l at 1. now apply Qcplus_lt_compat.
+Kmove. exists ε₁, (ε + ε0). find. rewrite <- Qcplus_0_l at 1. now apply Qcplus_lt_compat.
 (* Arithmetical proof *)
 rewrite Qcabs_le_condition in Hle. clear_realizers. revert Hc2 Hc6 Hle. clear. Qcunfold. lra.
 Qed.

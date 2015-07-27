@@ -1,5 +1,5 @@
-Require Export ShallowEmbedding.
-Require Export Tactics.
-Require Export BasicResults.
-Require Export Subtyping.
-Require Export PropEmbedding.
+Require Export ClassicalRealizability.ShallowEmbedding.
+Require Export ClassicalRealizability.Tactics.
+Require Export ClassicalRealizability.BasicResults.
+Require Export ClassicalRealizability.Subtyping.
+Require Export ClassicalRealizability.PropEmbedding.

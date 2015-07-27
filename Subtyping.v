@@ -1,8 +1,10 @@
-Require Import ShallowEmbedding.
-Require Import Tactics.
-Require Import BasicResults.
 Require Import RelationClasses.
 Require Import Morphisms.
+Require Import ClassicalRealizability.ShallowEmbedding.
+Require Import ClassicalRealizability.Tactics.
+Require Import ClassicalRealizability.BasicResults.
+
+
 Set Implicit Arguments.
 
 

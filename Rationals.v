@@ -1,7 +1,7 @@
 Require Import QArith.
-Require Export Qcabs.
-Require Export Qcminmax.
-Require Import Kbase.
+Require Export ClassicalRealizability.Qcabs.
+Require Export ClassicalRealizability.Qcminmax.
+Require Import ClassicalRealizability.Kbase.
 
 
 (************************************)
@@ -49,16 +49,16 @@ Global Notation "ℚ+" := ℚnneg.
 Global Instance Rel_ℚnneg : Relativisation ℚnneg := now_Rel ℚnneg (fun f q => 0 <= q ↦ [q] → f q).
 Global Hint Unfold Rel_ℚpos Rel_ℚnneg : Krivine.
 
-(** ** Tactics **)
+(** **  Tactics  **)
 
 Global Ltac rat_Keval tac :=
-  idtac;lazymatch goal with
+  lazymatch goal with
     | [ |- Cst ℚeq↓ _ ★ (Cst(Rat ?q₁)↓ _·Cst(Rat ?q₂)↓ _·?u·?v·?π) ∈ ⫫] =>
          apply anti_evaluation with ((if Qc_eq_dec q₁ q₂ then u else v) ★ π); [now apply red_ℚeq | simpl Qc_eq_dec]
     | [ |- Cst ℚle↓ _ ★ Cst(Rat ?q₁)↓ _·Cst(Rat ?q₂)↓ _·?u·?v·?π ∈ ⫫] =>
-         apply anti_evaluation with ((if Qclt_le_dec q₂ q₁ then v else u) ★ π); [now apply red_ℚle |]
+         apply anti_evaluation with ((if Qclt_le_dec q₂ q₁ then v else u) ★ π); [now apply red_ℚle |simpl Qclt_le_dec]
     | [ |- Cst ℚlt↓ _ ★ Cst(Rat ?q₁)↓ _·Cst(Rat ?q₂)↓ _·?u·?v·?π ∈ ⫫] =>
-         apply anti_evaluation with ((if Qclt_le_dec q₁ q₂ then u else v) ★ π); [now apply red_ℚlt |]
+         apply anti_evaluation with ((if Qclt_le_dec q₁ q₂ then u else v) ★ π); [now apply red_ℚlt |simpl Qclt_le_dec]
     | [ |- Cst ℚadd↓ _ ★ Cst(Rat ?q₁)↓ _·Cst(Rat ?q₂)↓ _·?k·?π ∈ ⫫] =>
          apply anti_evaluation with (k ★ Rat (q₁+q₂)↓∅·π); [now apply red_ℚadd |]
     | [ |- Cst ℚsub↓ _ ★ Cst(Rat ?q₁)↓ _·Cst(Rat ?q₂)↓ _·?k·?π ∈ ⫫] =>
@@ -84,7 +84,7 @@ Global Ltac rat_dstack tac Hπ :=
     | _ => tac Hπ
   end.
 
-Global Ltac Keval ::= basic_Keval ltac:(rat_Keval fail).
+Global Ltac Keval ::= basic_Keval ltac:(idtac; rat_Keval fail).
 Global Ltac dstack ::= basic_dstack ltac:(rat_dstack ltac:(prop_dstack fail)).
 
 Lemma ℚpos_ℚnoneg_subtype : forall q, ℚ+* q ⊆ ℚ+ q.
