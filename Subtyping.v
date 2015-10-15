@@ -169,27 +169,33 @@ Proof. intros ? ? H. Ksolve. now apply H. Qed.
 
 (** ** Automatization **)
 
+(* FIXME(speedup): use Hint Extern to speclialize the patterns on which each case is used
+   BUG 3199 !! *)
 Create HintDb Ksubtype.
 Hint Opaque subtype eqtype : Ksubtype.
 Hint Immediate (@reflexivity _ subtype _) (@reflexivity _ eqtype _) sub_Forall sub_bot sub_mapsto : Ksubtype.
 Hint Immediate mapsto_cancel mapsto_idempotent inter_mapsto_distr : Ksubtype.
 
-Hint Resolve sub_Impl : Ksubtype. (* the following line does not work for some reason *)
-(* Hint Extern 2 ((_ → _) ⊆ (_ → _)) => apply sub_Impl : Ksubtype. *)
+Hint Resolve sub_Impl sub_inter_l sub_inter_r sub_inter sub_Forall_add sub_Forall_cross : Ksubtype.
+Hint Resolve Forall_sub_compat mapsto_sub_compat inter_sub_compat : Ksubtype.
+(*
+Check sub_Impl.
+Hint Extern 2 ((_ → _) ⊆ (_ → _)) => eapply sub_Impl : Ksubtype.
 Hint Extern 0 ((_ ∩ _) ⊆ _) => apply sub_inter_l : Ksubtype.
 Hint Extern 0 ((_ ∩ _) ⊆ _) => apply sub_inter_r : Ksubtype.
 Hint Extern 2 (_ ⊆ (_ ∩ _)) => apply sub_inter : Ksubtype.
-Hint Extern 1 (_ ⊆ (∀_, _)) => apply sub_Forall_add; intro : Ksubtype. (* explicit intro to avoid stack overflow *)
+Hint Extern 1 (_ ⊆ (∀_, _)) => apply sub_Forall_add : Ksubtype.
 Hint Resolve sub_Forall_cross : Ksubtype.
-Hint Extern 1 ((∀_, _) ⊆ (∀_, _)) => apply Forall_sub_compat : Ksubtype.
-Hint Extern 2 ((_ ↦ _) ⊆ (_ ↦ _)) => apply mapsto_sub_compat : Ksubtype.
-Hint Extern 2 ((_ ∩ _) ⊆ (_ ∩ _)) => apply inter_sub_compat : Ksubtype.
-
+Hint Extern 1 ((∀_, _) ⊆ (∀_, _)) => apply Forall_sub_proper : Ksubtype.
+Hint Extern 2 ((_ ↦ _) ⊆ (_ ↦ _)) => apply mapsto_sub_proper : Ksubtype.
+Hint Extern 2 ((_ ∩ _) ⊆ (_ ∩ _)) => apply inter_sub_proper : Ksubtype.
+*)
 Hint Resolve sub_term sub_stack (@transitivity _ subtype _) : Ksubtype.
 Hint Extern 1 (_ ⊆ _) => apply top_bot_sub_one; trivial : Ksubtype. (* avoid unfolding of ⊆ *)
 Hint Extern 5 (_ ⊆ _) => apply eqtype_subtype : Ksubtype.
 Hint Extern 6 (_ ≈ _) => apply subtype_eqtype : Ksubtype.
 Hint Extern 7 (_ ≈ _) => apply (@symmetry _ eqtype _) : Ksubtype.   (* high cost to avoid excessive use *)
+(* Currently useless because of bug 3199 *)
 
 (** The tactic solving subtyping goals **)
 Ltac subtyping := progress eauto 6 with Ksubtype.
@@ -201,7 +207,7 @@ Ltac info_subtyping := progress info_eauto 6 with Ksubtype.
 (** **  Some examples  **)
 
 Example inter_idempotent : forall A, A ∩ A ≈ A.
-Proof. subtyping. Qed.
+Proof. subtyping. Qed. (* BUG 3199: symmetry used twice for nothing *) 
 
 Example callcc_realizes_NNPP : forall e, callcc↓e ⊩ ∀P, (¬¬P) → P.
 Proof. intro e. apply (sub_term (callcc_realizes_Peirce e)). subtyping. Qed.
