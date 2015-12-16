@@ -1,4 +1,4 @@
-Copyright (c) 2014, Lionel Rieg
+Copyright (c) 2014-2015, Lionel Rieg
 
 DESCRIPTION
 ===========
@@ -8,16 +8,16 @@ Krivine's classical realizability.
 
 As the original theory by Krivine, it is very modular and supports extension of
 the KAM by new instructions and their evaluation rules on the fly.  The main
-limitation of this library is that it currently only admits to use one pole at
+limitation of this library is that it currently only support using one pole at
 a time.  In particular, any proof using more than one pole (like the absence of
-a univesal realizer of the recurrence axiom under a deterministic evaluation)
+a universal realizer of the recurrence axiom under a deterministic evaluation)
 cannot be directly expressed.
 
 The library is structured as follows:
 + A core component gathered in Kbase.v:
   - ShallowEmbedding.v: basic definition of the KAM and Krivine's realizability
   - Tactics.v: automatization tactics to ease proofs
-  - BasicResults.v: elementary results in calssical realizability
+  - BasicResults.v: elementary results in classical realizability
   - Subtyping.v: subtyping between formulæ which permits simpler reasoning
   - PropEmbedding.v: a translation of Prop into realizability formulæ
 + Several extensions of the core theory:
@@ -32,7 +32,7 @@ The library is structured as follows:
 + A partial formalization of real numbers by (a variant of) Cauchy sequences,
   gatherd in Reals.v:
   - QcOrderedType.v, QcComplement.v, Qcminmax.v, Qcabs.v: auxiliary results
-    about the QCanon type, including a definition of absolute value
+    about the Qcanon type, including a definition of absolute value
   - Real_defintions.v: basic definition of reals numbers
   - Real_relations.v: comparisons on real numbers and their properties
   - Real_operations.v: operations on real numbers and their properties
@@ -46,14 +46,18 @@ Simply type compile all the files with:
 
 If it does not work, you can easily regenerate the makefile with the following
 command:
-    coq_makefile *.v -o makefile
+    coq_makefile -f _CoqProject -o makefile
 
-It is known to compile with Coq v.8.4pl3.
+Even if you only want to browse the files, compile them first to allow dynamic
+loading of dependencies.
 
-To generate the documentation in an existing directiry "doc/", type
-   coqdoc --utf8 -g -d doc/ *.v
+The library is known to compile with Coq v.8.5beta2.
+
+To generate the documentation in the directory "html/", type:
+   make html
 
 LICENCE
 =======
 
 This library is available under the CeCILL-B licence.
+
