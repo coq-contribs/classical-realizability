@@ -154,7 +154,7 @@ Lemma Qcsquare_pos : forall q, q <> 0 -> 0 < q * q.
 Proof.
 intros q Hq. destruct (Qcle_lt_or_eq _ _ (Qcsquare_nonneg q)) as [| Heq].
   assumption.
-  apply Qc_is_canon in Heq. symmetry in Heq. apply Qcmult_integral in Heq. destruct Heq; contradiction.
+  symmetry in Heq. apply Qcmult_integral in Heq. destruct Heq; contradiction.
 Qed.
 
 (** **  Inverse and division  **)

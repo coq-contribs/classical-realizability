@@ -161,5 +161,5 @@ Proof.
 unfold Rle, Ropp. intro. do 2 Ksolve. apply Qclt_le_weak. eok.
 apply Qcle_lt_or_eq in Hc0. destruct Hc0.
   apply Qcopp_lt_compat in H. eapply (↓x). eassumption. now rewrite Qcopp_involutive.
-  apply Qc_is_canon in H. rewrite H. now rewrite Qcopp_involutive.
+  rewrite H. now rewrite Qcopp_involutive.
 Qed.

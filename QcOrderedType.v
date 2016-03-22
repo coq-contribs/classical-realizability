@@ -48,7 +48,7 @@ Module Qc_as_OT <: OrderedTypeFull.
   Theorem le_lteq : forall x y : t, le x y <-> lt x y \/ eq x y.
   Proof.
   intros x y. unfold le,lt,eq. split; intro H.
-    destruct (Qcle_lt_or_eq _ _ H). now left. right. now apply Qc_is_canon.
+    destruct (Qcle_lt_or_eq _ _ H). now left. right. assumption.
     destruct H. now apply Qlt_le_weak. subst. now apply Qcle_refl.
   Qed.
   Definition compare_spec (x y : Qc) := Qccompare_spec x y.
