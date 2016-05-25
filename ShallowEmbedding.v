@@ -172,8 +172,8 @@ Example Ω_red : forall e π, δ↓e ★ δ↓e·π ≻ δ↓e ★ δ↓e·π.
 Proof. unfold δ at 1. intros e π. do 2 Kstep. apply red_Var. Qed.
 
 (** Storage operators for functions.
-    We impose the presence of the continuation(s) k (or u and v)
-    to ensure that reduction can only occur when it is present.
+    We force the presence of the continuation(s) k (or u and v)
+    to ensure that the reduction can only occur when it is present.
 **)
 Definition caron1 op := λ"Mx" "Mx" @ λ"x" op @ "x".
 Definition caron2 op := λ"Mx" "Mx" @ λ"x" λ"My" "My" @ λ"y" op @ "x" @ "y".
@@ -223,7 +223,7 @@ Ltac clear_realizers :=
 (** **  Quantifications  **)
 
 (** There is a lot of boilerplate code here because the notation mecanism of Coq is not powerful enough to handle
-    relativized quantification of arbitrary arity sot we have to define it for every arity.
+    relativized quantification of arbitrary arity so we have to define it for every fixed arity.
     In addition, we also take advantage of these definitions to optimize relativization predicates,
     so that relativzing to [A x ∧ B x] can be defined as [∀x, A x → B x → …].
     
