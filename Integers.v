@@ -31,7 +31,7 @@ Axiom red_ℤdiv : ℤdiv↓e ★ Int n↓e'·Int m↓e''·k·π ≻ k ★ Int (
 End Axioms.
 
 Definition IntArg n F := fun π => exists e, exists π', π = Int n↓e·π' /\ π' ∈ ‖F‖.
-Notation "'{' n '}' '→' F" := (IntArg n F).
+Notation "'{' n '}' '→' F" := (IntArg n F) (at level 78, right associativity).
 
 Definition ℤ n : formula := ∀Z, ({n} → Z) → Z.
 
