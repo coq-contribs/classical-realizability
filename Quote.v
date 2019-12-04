@@ -82,7 +82,7 @@ Proof.
 intros. subst t'.
 replace (u ★ π) with ((if Z.eq_dec (Z.of_nat (enumP (t·π))) (Z.of_nat (enumP (t·π))) then u else v) ★ π).
 now apply eq_realizer_aux.
-destruct (Z_eq_dec _ _) as [? | Hneq]. reflexivity. now elim Hneq.
+destruct (Z.eq_dec _ _) as [? | Hneq]. reflexivity. now elim Hneq.
 Qed. 
 
 Theorem eq_realizer2 : forall t t' u v π e, t <> t' -> eq↓e ★ t·t'·u·v·π ≻ v ★ π.
@@ -90,7 +90,7 @@ Proof.
 intros.
 replace (v ★ π) with ((if Z.eq_dec (Z.of_nat (enumP (t·π))) (Z.of_nat (enumP (t'·π))) then u else v) ★ π).
 now apply eq_realizer_aux.
-destruct (Z_eq_dec _ _) as [Heq | Hneq].
+destruct (Z.eq_dec _ _) as [Heq | Hneq].
   assert (t·π = t'·π) as Hπ. setoid_rewrite <- enumP_Penum. f_equal. now apply Nat2Z.inj.
   inversion Hπ. contradiction.
  reflexivity.

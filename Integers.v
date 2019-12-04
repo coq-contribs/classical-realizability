@@ -22,7 +22,7 @@ Parameter ℤeq ℤle ℤadd ℤsub ℤmul ℤdiv : instruction.
 Section Axioms.
 Variables (e e' e'' : env) (n m : Z) (u v k : Λ) (π : Π).
 
-Axiom red_ℤeq : ℤeq↓e ★ Int n↓e'·Int m↓e''·u·v·π ≻ (if Z_eq_dec n m then u else v) ★ π.
+Axiom red_ℤeq : ℤeq↓e ★ Int n↓e'·Int m↓e''·u·v·π ≻ (if Z.eq_dec n m then u else v) ★ π.
 Axiom red_ℤle : ℤle↓e ★ Int n↓e'·Int m↓e''·u·v·π ≻ (if Z_le_dec n m then u else v) ★ π.
 Axiom red_ℤadd : ℤadd↓e ★ Int n↓e'·Int m↓e''·k·π ≻ k ★ Int (n+m)↓∅ · π.
 Axiom red_ℤsub : ℤsub↓e ★ Int n↓e'·Int m↓e''·k·π ≻ k ★ Int (n-m)↓∅ · π.
@@ -40,7 +40,7 @@ Definition ℤ n : formula := ∀Z, ({n} → Z) → Z.
 Global Ltac int_Keval tac :=
   lazymatch goal with
     | [ |- Cst ℤeq↓ _ ★ Cst (Int ?n₁)↓ _·Cst (Int ?n₂)↓ _·?u·?v·?s ∈ ⫫] => Debug "Keval_ℤeq";
-         apply anti_evaluation with ((if Z_eq_dec n₁ n₂ then u else v) ★ s); [now apply red_ℤeq | simpl Z_eq_dec]
+         apply anti_evaluation with ((if Z.eq_dec n₁ n₂ then u else v) ★ s); [now apply red_ℤeq | simpl Z.eq_dec]
     | [ |- Cst ℤle↓ _ ★ Cst (Int ?n₁)↓ _·Cst (Int ?n₂)↓ _·?u·?v·?s ∈ ⫫] => Debug "Keval_ℤle";
          apply anti_evaluation with ((if Z_le_dec n₁ n₂ then u else v) ★ s); [now apply red_ℤle | simpl Z_le_dec]
     | [ |- Cst ℤadd↓ _ ★ Cst (Int ?n₁)↓ _·Cst (Int ?n₂)↓ _·?k·?s ∈ ⫫] => Debug "Keval_ℤadd";
