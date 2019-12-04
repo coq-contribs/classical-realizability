@@ -1,7 +1,7 @@
 Require Import ClassicalRealizability.Tactics.
 Require Import ClassicalRealizability.BasicResults.
 Require Import ClassicalRealizability.Subtyping.
-
+Import String.StringSyntax.
 
 (******************************)
 (** *  Logical equivalences  **)

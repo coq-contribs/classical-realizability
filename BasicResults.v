@@ -1,5 +1,5 @@
 Require Import ClassicalRealizability.Tactics.
-
+Import String.StringSyntax.
 
 (*************************************)
 (** *  First realizability results  **)

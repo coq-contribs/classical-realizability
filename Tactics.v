@@ -1,5 +1,5 @@
 Require Export ClassicalRealizability.ShallowEmbedding.
-
+Import String.StringSyntax.
 
 (********************************)
 (** *  Automatisation tactics  **)
