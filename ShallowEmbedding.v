@@ -74,9 +74,9 @@ Bind Scope Env_scope with env.
 Bind Scope Stack_scope with Π.
 Bind Scope Clos_scope with Λ.
 
-Arguments Scope Cont [Stack_scope].
-Arguments Scope Scons [Clos_scope Stack_scope].
-Arguments Scope Econs [Clos_scope Env_scope].
+Arguments Cont _%Stack_scope.
+Arguments Scons _%Clos_scope _%Stack_scope.
+Arguments Econs _%Clos_scope _%Env_scope.
 
 (* Extracting a closure from an environment *)
 Fixpoint get s (e : env) : Λ :=
