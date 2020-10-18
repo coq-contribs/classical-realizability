@@ -10,6 +10,7 @@ Close Scope Q_scope.
 (************************************)
 
 Definition Re := Qc -> Qc -> formula.
+Declare Scope Re_scope.
 Delimit Scope Re_scope with Re.
 Bind Scope Re_scope with Re.
 Open Scope Re_scope.
