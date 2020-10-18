@@ -58,9 +58,9 @@ Infix "≡" := Req.
     
     Notice that the term is written in CPS style because of the definition of rational operations in the KAM.
 **)
-Definition average := λ"q₁" λ"q₂" Qq 2 @ (ℚadd @ "q₁" @ "q₂" @ ℚdiv).
+Definition average := λ"q₁" λ"q₂" Qq 2%nat @ (ℚadd @ "q₁" @ "q₂" @ ℚdiv).
 
-Lemma average_realizer : forall e, average↓e ⊩ ∀₂q₁,q₂∈ℚ×ℚ, ℚ (Qcdiv (Qcplus q₁ q₂) 2).
+Lemma average_realizer : forall e, average↓e ⊩ ∀₂q₁,q₂∈ℚ×ℚ, ℚ (Qcdiv (Qcplus q₁ q₂) 2%nat).
 Proof. Ksolve. apply Qq_realizer. find. start. apply ℚdiv_realizer. find. Qed.
 
 (** **  Order and equivalence properties of ≤ and =  **)

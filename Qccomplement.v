@@ -282,21 +282,21 @@ Ltac Qcunfold :=
   unfold Qcle,Qclt,Qcdiv,Qcminus,Qcinv,Qcopp,Qcmult,Qcplus;
   try apply Qc_is_canon; repeat rewrite Q2Qc_correct.
 
-Lemma half_pos : forall q, 0 < q -> 0 < q / 2.
+Lemma half_pos : forall q, 0 < q -> 0 < q / 2%nat.
 Proof. intros. apply Qclt_shift_div_l. now compute. now rewrite Qcmult_0_l. Qed.
 
-Lemma third_pos : forall q, 0 < q -> 0 < q / 3.
+Lemma third_pos : forall q, 0 < q -> 0 < q / 3%nat.
 Proof. intros. apply Qclt_shift_div_l. now compute. now rewrite Qcmult_0_l. Qed.
 
-Lemma quarter_pos : forall q, 0 < q -> 0 < q / 4.
+Lemma quarter_pos : forall q, 0 < q -> 0 < q / 4%nat.
 Proof. intros. apply Qclt_shift_div_l. now compute. now rewrite Qcmult_0_l. Qed.
 
-Lemma fifth_pos : forall q, 0 < q -> 0 < q / 5.
+Lemma fifth_pos : forall q, 0 < q -> 0 < q / 5%nat.
 Proof. intros. apply Qclt_shift_div_l. now compute. now rewrite Qcmult_0_l. Qed.
 
-Lemma half_nneg : forall q, 0 <= q -> 0 <= q / 2.
+Lemma half_nneg : forall q, 0 <= q -> 0 <= q / 2%nat.
 Proof.
-intros q H. apply Qcmult_lt_0_le_reg_r with 2. now compute.
+intros q H. apply Qcmult_lt_0_le_reg_r with 2%nat. now compute.
 rewrite Qcmult_0_l. unfold Qcdiv. rewrite <- Qcmult_assoc. rewrite Qcmult_inv_l. now rewrite Qcmult_1_r. now compute.
 Qed.
 

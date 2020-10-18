@@ -52,7 +52,7 @@ intro q. apply Qcabs_case; unfold Qcle,Qcopp; repeat rewrite Q2Qc_correct;
 intro; (now rewrite Qabs.Qabs_pos) || now rewrite Qabs.Qabs_neg.
 Qed.
 
-Lemma Zabs_Qcabs : forall n d, Q2Qc (Zabs n#d) = Qcabs (Q2Qc (n#d)).
+Lemma Zabs_Qcabs : forall n d, Q2Qc (Z.abs n#d) = Qcabs (Q2Qc (n#d)).
 Proof. intros n d. apply Qc_is_canon. rewrite Qcabs_Q. repeat rewrite Q2Qc_correct. apply Qabs.Zabs_Qabs. Qed.
 
 Lemma Qcabs_opp : forall x, Qcabs (-x) = Qcabs x.

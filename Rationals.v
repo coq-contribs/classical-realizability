@@ -214,7 +214,7 @@ intro e. startn 6. apply ℚle_realizer. find.
 Qed.
 
 Definition leℚ_tight :=
-  λ"q₁" λ"q₂" λ"f" ℚle @ "q₁" @ "q₂" @ Id @ (Qq 2 @ (ℚsub @ "q₁" @ "q₂" @ ℚdiv) @ "f").
+  λ"q₁" λ"q₂" λ"f" ℚle @ "q₁" @ "q₂" @ Id @ (Qq 2%nat @ (ℚsub @ "q₁" @ "q₂" @ ℚdiv) @ "f").
 
 Theorem leℚ_tight_realizer : forall e, leℚ_tight↓e ⊩ ∀₂q₁,q₂∈ℚ×ℚ, (∀₁ε∈ℚ+*, q₁ ≤ q₂ + ε) → q₁ ≤ q₂.
 Proof.
@@ -225,8 +225,7 @@ apply Qclt_shift_div_l. now compute. unfold Qcminus. now rewrite <- Qclt_minus_i
 + destruct (Qclt_le_dec q₂ q₁) as [Hq | Hq].
   - right. split. ok. right. split.
     apply Qclt_not_le. Qcunfold. field_simplify. apply Qlt_shift_div_r. now compute. simpl. field_simplify.
-    setoid_replace ((2 # 1) * q₁ / 1)%Q with (q₁ + q₁)%Q by field.
-    setoid_replace ((q₂ + q₁) / 1)%Q with (q₂ + q₁)%Q by field.
+    setoid_replace (2 * q₁)%Q with (q₁ + q₁)%Q by field.
     apply Qplus_lt_le_compat. ok. now apply Qle_refl. now compute.
     apply (top_bot_sub_prop Hπ).
   - left. now split.
